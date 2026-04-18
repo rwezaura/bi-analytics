@@ -1,0 +1,237 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/18/2015 12:28:10 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BIDWH02"
+  DTS:CreatorName="TIGO\mitchell.pearson"
+  DTS:DTSID="{6C3E4270-2208-4EC3-9A1F-3B480A108F3E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CCI_CreateCompressionTables"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{4CA049AE-400B-4A19-BC34-1031E8B3AB06}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F30EDAC-64D4-4717-B67A-B18D84C3D78E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dtPPN_DT">
+      <DTS:VariableValue
+        DTS:DataType="7">6/18/2015 1:14:11 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{25719EB7-6C19-4641-AB0E-D5C92D779AE6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="objItemList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4C4D0AD2-C0AD-4AF4-ABA6-360E95BE9BCA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="strSourceSystem">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FELC Loop Over Dates"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{EF449227-C3CE-4D28-9EEA-D5C2D8B25E49}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FELC Loop Over Dates">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{B038083A-0101-4943-928C-0A38DEB23503}"
+        DTS:ObjectName="{113A2807-5F80-4C06-A6C1-C44A040AB261}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::objItemList" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FELC Loop Over Dates\SQL Create Page Compression Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A0ADBC15-4213-4890-B022-1330D63EB05B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Create Page Compression Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A84AB66E-6528-4D48-87F1-17440CAC4DC4}"
+              SQLTask:SqlStatementSource="EXEC [etl].[CreatePageCompressionTable] ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::strSourceSystem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::dtPPN_DT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{80C8D04F-E956-4FF2-B97F-DED164CCCB27}"
+          DTS:ObjectName="{80C8D04F-E956-4FF2-B97F-DED164CCCB27}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::strSourceSystem" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{487D5E1D-EE42-4A72-9F1A-181BDA75C98E}"
+          DTS:ObjectName="{487D5E1D-EE42-4A72-9F1A-181BDA75C98E}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::dtPPN_DT" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Generate List of Dates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{275333CA-8FE1-4C55-AFCA-F74EF8AF3E8B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Generate List of Dates"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A84AB66E-6528-4D48-87F1-17440CAC4DC4}"
+          SQLTask:SqlStatementSource="EXEC [etl].[CCI_List_Of_Tables]"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::objItemList" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9F0E4AC6-A3BA-446F-8753-EA4AC3F3CB5E}"
+      DTS:From="Package\SQL Generate List of Dates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FELC Loop Over Dates" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="251,42"
+          Id="Package\FELC Loop Over Dates\SQL Create Page Compression Table"
+          TopLeft="24,13" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="293,77"
+          Size="293,120"
+          Id="Package\FELC Loop Over Dates"
+          TopLeft="279,278" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\SQL Generate List of Dates"
+          TopLeft="297,117" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="400,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.5,119"
+              Start="0,0"
+              End="25.5,111.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.5"
+                    Point2="0,59.5"
+                    Point3="4,59.5" />
+                  <mssgle:LineSegment
+                    End="21.5,59.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.5,59.5"
+                    Point2="25.5,59.5"
+                    Point3="25.5,63.5" />
+                  <mssgle:LineSegment
+                    End="25.5,111.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="EXEC [dbo].[CCI_ListOfTables_Create]&#xA;Step 1 - Get a List of dates per stream from the CCI_Process Table.&#xA;              Also we want to add three additional days for the current &#xA;              day and next couple days.&#xA;&#xA;EXEC [dbo].[CreatePageCompressionTable]&#xA;Step 2 - Loop through all days and streams and create page &#xA;              compression tables if necessary."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="380,152"
+          Id="a3e0ad3c-3395-4c4a-8266-60d80dc22abc"
+          TopLeft="612,167" />
+        <AnnotationLayout
+          Text="This package creates Page Compression tables for the Column Compression ETL Design &#xA;pattern. Only the larger CDRs that are part of the new ETL design pattern utilize Page&#xA;Compression tables before being loaded into Column Compressed tables (Rec,Data,SMS).&#xA;At this time smaller streams like MGR and VOU are loaded directly into Column Compression&#xA;tables. - MP"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="520,104"
+          Id="85587218-3e35-4d86-9add-fa6aa34ce8b6"
+          TopLeft="151,24" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
