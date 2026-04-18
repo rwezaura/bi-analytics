@@ -1,0 +1,2440 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/3/2012 12:18:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INBAMSPC00119"
+  DTS:CreatorName="TECHMAHINDRA\VK0064411"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{DCA2A6AF-ABE7-4465-80E9-0BD0977C5705}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Stage_MFSTRANS_ACCOUNT_ENTRY_Master"
+  DTS:PackageType="5"
+  DTS:VersionBuild="949"
+  DTS:VersionGUID="{571EB53F-9DD5-4552-84E3-F659EDCD72F1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="LogID"
+      DTS:ConfigurationVariable="\Package.Variables[User::LogID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{99553F4F-7AA1-43B5-BDDA-1A13396086BA}"
+      DTS:ObjectName="Configuration 1" />
+    <DTS:Configuration
+      DTS:ConfigurationString="Landing_Server"
+      DTS:ConfigurationVariable="\Package.Variables[User::Landing_Server].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC1B901E-B13B-479E-88EF-753112C5DB22}"
+      DTS:ObjectName="Configuration 2" />
+    <DTS:Configuration
+      DTS:ConfigurationString="Landing_DB"
+      DTS:ConfigurationVariable="\Package.Variables[User::Landing_DB].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{2D34D200-B425-45D5-838A-5205C3B00E7C}"
+      DTS:ObjectName="Configuration 3" />
+    <DTS:Configuration
+      DTS:ConfigurationString="Source_Server"
+      DTS:ConfigurationVariable="\Package.Variables[User::Source_Server].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{2ED5F665-6063-44D2-BE1A-98A3F1A8FABE}"
+      DTS:ObjectName="Configuration 4" />
+    <DTS:Configuration
+      DTS:ConfigurationString="Source_DB"
+      DTS:ConfigurationVariable="\Package.Variables[User::Source_Server].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{068D134D-B5A0-4417-833F-BE344E4CFA53}"
+      DTS:ObjectName="Configuration 5" />
+    <DTS:Configuration
+      DTS:ConfigurationString="WRK_LOC"
+      DTS:ConfigurationVariable="\Package.Variables[User::WRK_LOC].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{14A601F7-F9BF-4394-8A23-098F6B86A10F}"
+      DTS:ObjectName="Configuration 8" />
+    <DTS:Configuration
+      DTS:ConfigurationString="PPN_DT"
+      DTS:ConfigurationVariable="\Package.Variables[User::PPN_DT].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{B3BF9E3A-5843-473A-BCBD-749AEC03C738}"
+      DTS:ObjectName="Configuration 9" />
+    <DTS:Configuration
+      DTS:ConfigurationString="Arch_All"
+      DTS:ConfigurationVariable="\Package.Variables[User::Arch_All].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF4B5CA4-2158-4DF4-B2A5-4068AD5D4197}"
+      DTS:ObjectName="Configuration 6" />
+    <DTS:Configuration
+      DTS:ConfigurationString="rej_All"
+      DTS:ConfigurationVariable="\Package.Variables[User::rej_All].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{E00BBBA7-17CF-47B4-B5DF-E9D0664E35B0}"
+      DTS:ObjectName="Configuration 7" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="OLEDB_Auditing"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:DelayValidation="True"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{3A3B9800-C064-4228-9DC8-98D3046B8AA2}"
+      DTS:ObjectName="BIxPress Log Provider">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{924FF9F7-22C8-4436-9FE4-A59A3F88E5FA}"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{583E67A4-EF9A-46C1-87F2-6496F0E6DFBD}"
+      DTS:ObjectName="MFSTRANS_ACCOUNT_ENTRY_Threads">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">10</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{33466C88-17C1-4501-8FB2-5FCB3C06A4B0}"
+      DTS:ObjectName="PPN_DT">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">10/1/2013</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A178A8DA-6814-4C2A-88D5-FC720187DD7D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intCounter"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2782BB15-1CD9-44FD-B24B-3F14E3E6272E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LogID"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3ACC0690-6FD0-4D67-BDB5-F656E887B000}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_Database"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">AnalyticsStaging</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DAE21AAF-E13F-44A0-B040-1C2F1DA3EF98}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_PartitionNbr"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A5919B6-2414-480E-8CBD-503C0163D269}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_PartitionTableName"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">CBSGFT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A8C65E5-01CD-468F-9FA3-A38BC60F58F0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_SchemaName"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">dbo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EB00F84B-D19A-44F2-A925-9F0C4205B533}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_Server"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">10.1.5.173\STAGING</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9711555E-9380-4339-A373-4A3B2B45E7A4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_StagingTableName"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">CBSGFT_Stage</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0CC87ECE-17E0-4CD4-92F9-05A17485962B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;ALTER TABLE &quot; +  @[User::partmgmt_StagingTableName] + &quot; SWITCH TO &quot; +  @[User::partmgmt_SchemaName] + &quot;.&quot; +  @[User::partmgmt_PartitionTableName] + &quot; PARTITION &quot; +  @[User::partmgmt_PartitionNbr]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="partmgmt_SwitchSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">ALTER TABLE CBSGFT_Stage SWITCH TO dbo.CBSGFT PARTITION </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F457013-A2B1-4202-B7CD-A144B48BFE5C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningIndicator"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9C284983-19EF-4F63-B5EA-EA5DB1D055BF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="UseManagePartition"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{82091C6B-6C82-4DCF-9DA5-60A4BBAB3A50}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{A49D1BB1-9C0E-415B-A574-1B50BF53D4FF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls execution of all event handlers for BIxPress Auditing Framework. Set this variable to True or -1 if you want to disable auditing framework related code inside all eventhandlers. You may also have to set Package.LoggingMode=2 along with this variable if you want to disable framework completely."
+      DTS:DTSID="{15783F0C-4F6A-41EA-9A45-024CF54A2F86}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSSISOps_DisableBIxAuditing">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{3A3B9800-C064-4228-9DC8-98D3046B8AA2}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FLC Execute Multipe Child Threads"
+      DTS:AssignExpression="@intCounter = @intCounter + 1"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="For Loop Container"
+      DTS:DTSID="{F214704E-0EBF-4D38-94F3-E759023B6BF2}"
+      DTS:EvalExpression="@intCounter &lt; (DT_I4)@MFSTRANS_ACCOUNT_ENTRY_Threads"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@intCounter = 0"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="FLC Execute Multipe Child Threads">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FLC Execute Multipe Child Threads\SQL Stage_MFSTRANS_ACCOUNT_ENTRY"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{09650828-A573-4D66-B12E-6E53FDBFE265}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Stage_MFSTRANS_ACCOUNT_ENTRY"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="Declare @execution_id bigint&#xA;DECLARE @ETLBatchID int = ?&#xA;DECLARE @PPN_DT datetime = ?&#xA;DECLARE @Logging smallint = 2&#xA;&#xA;EXEC [SSISDB].[catalog].[create_execution] @package_name=N'Stage_MFSTRANS_ACCOUNT_ENTRY.dtsx', @execution_id=@execution_id OUTPUT, @folder_name=?, @project_name=?, @use32bitruntime=False, @reference_id=Null&#xA;Select @execution_id&#xA;EXEC [SSISDB].[catalog].[set_execution_parameter_value] @execution_id,  @object_type=30, @parameter_name=N'ETLBatchID', @parameter_value=@ETLBatchID&#xA;EXEC [SSISDB].[catalog].[set_execution_parameter_value] @execution_id,  @object_type=30, @parameter_name=N'PPN_DT', @parameter_value=@PPN_DT&#xA;EXEC [SSISDB].[catalog].[set_execution_parameter_value] @execution_id,  @object_type=50, @parameter_name=N'LOGGING_LEVEL', @parameter_value=@Logging&#xA;EXEC [SSISDB].[catalog].[start_execution] @execution_id&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ETLBatchID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Package::PPN_DT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="$Project::SSISDBFolder"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="$Project::SSISDBProject"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FLC Running Indicator"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="For Loop Container"
+      DTS:DTSID="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}"
+      DTS:EvalExpression="@RunningIndicator != 0"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@RunningIndicator = -1"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="FLC Running Indicator">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FLC Running Indicator\SQL ThreadCompleteCheck"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{17C4399F-452C-45D4-B804-D2EFFD67B73A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL ThreadCompleteCheck"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="EXEC dbo.ThreadCompleteCheck 'Stage_MFSTRANS_ACCOUNT_ENTRY.dtsx', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RunningIndicator"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLC Running Indicator\TF Timer Task"
+          DTS:CreationName="PW.TaskFactory.TimerTask"
+          DTS:Description="TF Timer Task"
+          DTS:DTSID="{580CE162-6218-44E0-AB45-87E124BE75E6}"
+          DTS:ExecutableType="PW.TaskFactory.TimerTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TF Timer Task"
+          DTS:TaskContact="Pragmatic Works, Inc; Task Factory (c) 2009 - 2011 Pragmatic Works, Inc; http://www.pragmaticworks.com;support@pragmaticworks.com"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <TimerTask
+              TimerOption="PauseFor"
+              TimerDays="0"
+              TimerHours="0"
+              TimerMinutes="0"
+              TimerFrom="TimerTask"
+              TimerSeconds="5"
+              TimerDateTime="10/4/2013 6:17:55 PM"
+              TimerVariable="" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLC Running Indicator.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B0A9964D-BDC2-46DD-88C2-3D1C4131CABF}"
+          DTS:From="Package\FLC Running Indicator\SQL ThreadCompleteCheck"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FLC Running Indicator\TF Timer Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{62BADC1F-59F6-4AD8-AE5E-903E7657336F}"
+      DTS:From="Package\FLC Execute Multipe Child Threads"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\FLC Running Indicator" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{405997D2-EA32-499B-888B-7C6307C6C7B8}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{85C68ACF-1DAE-4B44-B9E2-21A8394F130A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SSISOpsEhObj_OnError_Start"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{C89071B2-374E-4275-8575-CCE280559AF2}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnError_Start"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableBIxAuditing]</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SSISOpsEhObj_Package_OnError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{07A62280-CC2D-431E-A8C9-2F66538D6A26}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Package_OnError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Package',@EventType='E',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SSISOpsEhObj_Task_OnError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{E76E9CD6-FD18-4866-B93C-E6D40E0F3255}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Task',@EventType='E',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[{5E2F856E-AE58-459F-8E3E-74038EB0DF1C\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{5E2F856E-AE58-459F-8E3E-74038EB0DF1C}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==@[System::PackageID] &amp;&amp; @[System::SourceName]==@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnError]\SSISOpsEhObj_OnError_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{5E2F856E-AE58-459F-8E3E-74038EB0DF1C}"
+          DTS:To="Package.EventHandlers[OnError]\SSISOpsEhObj_Package_OnError"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[{77432DF9-9131-4506-80AF-8BA1BEB08B2A\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{77432DF9-9131-4506-80AF-8BA1BEB08B2A}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]!=@[System::PackageID] &amp;&amp; @[System::SourceName]!=@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnError]\SSISOpsEhObj_OnError_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{77432DF9-9131-4506-80AF-8BA1BEB08B2A}"
+          DTS:To="Package.EventHandlers[OnError]\SSISOpsEhObj_Task_OnError"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{E1BCDDD8-6D65-40EB-B0C4-FBBBA5AA47EE}"
+      DTS:EventID="2025450460"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{A308FA7E-9D46-460F-892E-009F25B0CDF6}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{FE622C5F-4C26-43A1-8A53-1BF50EA0DC7F}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectCatalog">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{9442F2DC-E7A3-4221-88E7-70267EE7AB77}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectConnectionName">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{2412EF03-2E02-4009-971F-19CF6B6C8059}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectConnectionString">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{3ED03AAC-F471-4254-B3BB-8246FDC8C8BB}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectDataSource">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{00957240-11DF-4776-ABCB-AE328CA5F3F9}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectUserName">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{546ACE42-C2EA-47C1-8313-E6C4F21A708E}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectCatalog">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{A04EF360-5D4E-4389-9CF8-3AAEF458F351}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectConnectionName">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{52162A2B-EE99-400B-8D53-42766C7B0476}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectConnectionString">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{C434C839-9D37-4162-A236-D42FBAD1E48D}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectDataSource">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{B4F1EC41-E9B1-43E9-9E65-DD570A7F3075}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectUserName">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{D3B2CB1D-0145-42C8-95A4-9FE39E0669A3}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_ConnectionValues">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of connection strings (in PreExcute and PostExecute Eventhandlers). Set this variable to True or -1 if you want to disable connectionstring logging."
+          DTS:DTSID="{7E306B25-D219-47FC-970D-59D96B48BD9E}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableConnLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of datasource information (e.g. SqlCommand, ConnectionName, TableName etc.)"
+          DTS:DTSID="{6E2B7C3E-8CE7-4031-9685-91614977CC0A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableDataSrcInfoLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of row count for each attached with source and target information (e.g. SqlCommand, ConnectionName, TableName etc.)"
+          DTS:DTSID="{DE9EEA6B-F775-4B1E-B316-99EE3B1F68FE}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableDFTRowCountLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in 3.5.3) controls logging of the initial value of non-sensitive parameters.  Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{B071FFA9-6C19-4AF9-9EB6-B59FD44B4ACB}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableParameterInitialValueLogging"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of variable values (in PreExcute and PostExecute Eventhandlers). Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{0BEADF08-A2D4-4039-87B2-80B4C5595991}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableVarLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to list of ConnectionManagers you want to mask ConnectionStrings during logging process inside OnPreExecute Eventhandler. You can use comma separated list you can use wildcard &quot; * &quot; for pattern matching names are case in-sensitive. This option is helpful when you want to hide certain connection strings or file paths from users who are using BIxPress Monitoring Console or Reports. When masking is enabled, &quot;****&quot; is logged in the BIxPress Audit Database rather than actual connectionstring of specified connection managers. Note: You can configure list of variables you want to mask outside the package by configuring &quot;varSSISOps_FilteredConns&quot;. There are 2 places where you have to set this value (OnPreExecute, OnPostExecute)."
+          DTS:DTSID="{CC9EC672-AF9F-446A-ABDC-125C55BB5B4D}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredConns">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in 3.5.3) controls logging of the initial value of non-sensitive parameters.  Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{0BA16887-07EA-4040-99A3-21F864712D1B}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredParams"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="8">CBSGFT_Threads,ETLBatchID,PPN_DT</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to list of variables you want to mask during logging process. You can use comma separated list you can use wildcard &quot; * &quot; for pattern matching names are case insensitive. This option is used to mask variable values during logging process. This option is helpful when you have sensitive data (e.g. varFTP_Password) or variable value is extremly large to display (e.g. varXML_Document). When masking is enabled, &quot;****&quot; is logged in the BIxPress Audit Database rather than actual value of variable. Note: You can configure list of variables you want to mask outside the package by configuring &quot;varSSISOps_FilteredVars&quot;. There are 3 places where you have to set this value (OnPreExecute, OnPostExecute, OnVariableValueChanged)."
+          DTS:DTSID="{63847BD2-BF44-4D6D-A8E7-953D9D36D18F}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredVars">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to configure how many characters will be logged for each variable. Default variable length for logging is 4000 anything after that will be truncated. -1 = Log full variable value . There are 3 places where you have to set this value (OnPreExecute, OnPostExecute OnVariableValueChanged)."
+          DTS:DTSID="{E3EEC361-CB2A-4B8A-9960-DA46185A8D24}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_MaxVarCharsToLog">
+          <DTS:VariableValue
+            DTS:DataType="3">4000</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{8757A1AE-C166-471B-AD28-CF8BA0318F4B}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_VariableValues">
+          <DTS:VariableValue
+            DTS:DataType="8">User::intCounter,User::LogID,User::partmgmt_Database,User::partmgmt_PartitionNbr,User::partmgmt_PartitionTableName,User::partmgmt_SchemaName,User::partmgmt_Server,User::partmgmt_StagingTableName,User::partmgmt_SwitchSQL,User::RunningIndicator,User::UseManagePartition</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Row Count Logging For [DFT GFT=&gt;OLE_DST GFT]"
+          DTS:DTSID="{D23311F0-A29E-497D-A68B-0907C424CC3F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="usp_SSISOps_Audit_Insert_RowCount @ComponentUniqueID='{C7598B70-5EDB-4CC6-853A-BB563723F3AB}_6',@ComponentTypeCode='DEST',@ComponentTypeName='UNKNOWN',@ComponentName='OLE_DST GFT',@DataObjectType='UNKNOWN',@DataObjectName='',@DataObjectQuery='',@DataObjectConnectionString=?,@DataObjectConnectionName='',@DataObjectDataSource=?,@DataObjectUserName=?,@DataObjectCatalog=?,@ExecutionID=?,@SourceName=?,@SourceID=?,@RecordCount=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectConnectionString"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectDataSource"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectUserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1_DataObjectCatalog"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_1"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Row Count Logging For [DFT GFT=&gt;OLE_SRC GFT_Stage]"
+          DTS:DTSID="{44466780-49F2-4780-9E7D-2CB53BC7D93F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_2"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="usp_SSISOps_Audit_Insert_RowCount @ComponentUniqueID='{C7598B70-5EDB-4CC6-853A-BB563723F3AB}_157',@ComponentTypeCode='SRC',@ComponentTypeName='UNKNOWN',@ComponentName='OLE_SRC GFT_Stage',@DataObjectType='UNKNOWN',@DataObjectName='',@DataObjectQuery='',@DataObjectConnectionString=?,@DataObjectConnectionName='',@DataObjectDataSource=?,@DataObjectUserName=?,@DataObjectCatalog=?,@ExecutionID=?,@SourceName=?,@SourceID=?,@RecordCount=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectConnectionString"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectDataSource"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectUserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2_DataObjectCatalog"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::varSSISOps_902E898EA0584026B81E535FFC881CBC_RowCount_2"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_LogVariableOrConn"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{BF24FC5F-71A5-4DB7-91E3-BED7E41C73CA}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnPostExecute_LogVariableOrConn"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableVarLogging]==true &amp;&amp; @[User::varSSISOps_DisableConnLogging]==true</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{B9630527-C6D0-4149-87F9-11FF06564207}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableDataSrcInfoLogging]</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_Start"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{36B08D36-3203-4810-907C-C04AE9F79565}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnPostExecute_Start"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableBIxAuditing]</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Package_OnPostExecute"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{6534F581-AE4C-4F53-84A7-91260DE06314}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Package_OnPostExecute"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnPostExecute @Scope='Package',@ExecutionID=?,@SourceID=?,@RowCountSupport=1,@LogCustomValues=0,@Variables=?,@Connections=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::varSSISOps_VariableValues"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::varSSISOps_ConnectionValues"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Task_OnPostExecute"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{BFACFBB3-F8CD-46E0-9B8B-84BEC8BA5D6F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnPostExecute"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnPostExecute @Scope='Task',@ExecutionID=?,@SourceID=?,@RowCountSupport=1,@LogCustomValues=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{2000A1C0-C649-4A7B-9317-CA569D697CC3\}]"
+          DTS:CreationName=""
+          DTS:DTSID="{2000A1C0-C649-4A7B-9317-CA569D697CC3}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==&quot;{C7598B70-5EDB-4CC6-853A-BB563723F3AB}&quot; &amp;&amp; (@[User::varSSISOps_DisableDFTRowCountLogging]==false || @[User::varSSISOps_DisableDataSrcInfoLogging]==false)"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Task_OnPostExecute"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{2000A1C0-C649-4A7B-9317-CA569D697CC3}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{4D979E23-3470-46F1-BCE4-56AB3086E985\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{4D979E23-3470-46F1-BCE4-56AB3086E985}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==&quot;{C7598B70-5EDB-4CC6-853A-BB563723F3AB}&quot; &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; (@[User::varSSISOps_DisableDFTRowCountLogging]==false)"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{4D979E23-3470-46F1-BCE4-56AB3086E985}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_2"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{5102A1D7-C289-4963-BE45-62ABDC01241C\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{5102A1D7-C289-4963-BE45-62ABDC01241C}"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_LogVariableOrConn"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{5102A1D7-C289-4963-BE45-62ABDC01241C}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Package_OnPostExecute"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{9309E270-7F90-4B6E-9BB1-7FB343F715A0\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{9309E270-7F90-4B6E-9BB1-7FB343F715A0}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]!=@[System::PackageID] &amp;&amp; @[System::SourceName]!=@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{9309E270-7F90-4B6E-9BB1-7FB343F715A0}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Task_OnPostExecute"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{94F3BEAD-5F3F-4F3B-AC96-619977ACAE91\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{94F3BEAD-5F3F-4F3B-AC96-619977ACAE91}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==&quot;{C7598B70-5EDB-4CC6-853A-BB563723F3AB}&quot; &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; (@[User::varSSISOps_DisableDFTRowCountLogging]==false)"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{94F3BEAD-5F3F-4F3B-AC96-619977ACAE91}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_1"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{C474A4A5-C1B8-46B8-AD21-E4E819EC77DB\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{C474A4A5-C1B8-46B8-AD21-E4E819EC77DB}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==@[System::PackageID] &amp;&amp; @[System::SourceName]==@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{C474A4A5-C1B8-46B8-AD21-E4E819EC77DB}"
+          DTS:To="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_LogVariableOrConn"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{D6F0E7DB-D41C-4F83-A699-060F721E7B4D}"
+      DTS:EventID="0"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{824C3926-4A63-47AB-9130-7537F87BA03C}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{ACCCA60A-410B-4DF1-AA5E-02C92E0233E8}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_ConnectionValues">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{B19B63AB-F079-473F-990B-438F086818DF}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DfLayout">
+          <DTS:VariableValue
+            DTS:DataType="8">&lt;layout version="3" compressed="true"&gt;&lt;DTS:Executable xmlns:DTS = "www.microsoft.com/SqlServer/Dts" DTS:ExecutableType = "SSIS.Package.2"&gt;&lt;/DTS:Executable&gt;&lt;/layout&gt;</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of connection strings (in PreExcute and PostExecute Eventhandlers). Set this variable to True or -1 if you want to disable connectionstring logging."
+          DTS:DTSID="{86EC384D-D1E2-4399-BA14-BBF81B69438F}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableConnLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in 3.5.3) controls logging of the initial value of non-sensitive parameters.  Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{72E198EB-424D-4497-B1D1-B1E3CBCD8EF4}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableParameterInitialValueLogging"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in v3.2) controls logging of variable values (in PreExcute and PostExecute Eventhandlers). Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{4150EADB-4AE6-41E4-B15D-E26F354346B4}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_DisableVarLogging">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to list of ConnectionManagers you want to mask ConnectionStrings during logging process inside OnPreExecute Eventhandler. You can use comma separated list you can use wildcard &quot; * &quot; for pattern matching names are case in-sensitive. This option is helpful when you want to hide certain connection strings or file paths from users who are using BIxPress Monitoring Console or Reports. When masking is enabled, &quot;****&quot; is logged in the BIxPress Audit Database rather than actual connectionstring of specified connection managers. Note: You can configure list of variables you want to mask outside the package by configuring &quot;varSSISOps_FilteredConns&quot;. There are 2 places where you have to set this value (OnPreExecute, OnPostExecute)."
+          DTS:DTSID="{5FCA8624-01D6-41A6-B31C-BD567C83086A}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredConns">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. This variable (introduced in 3.5.3) controls logging of the initial value of non-sensitive parameters.  Set this variable to True or -1 if you want to disable variable logging."
+          DTS:DTSID="{70053466-D63D-463B-84EB-518EA02D6DC1}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredParams"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="8">CBSGFT_Threads,ETLBatchID,PPN_DT</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to list of variables you want to mask during logging process. You can use comma separated list you can use wildcard &quot; * &quot; for pattern matching names are case insensitive. This option is used to mask variable values during logging process. This option is helpful when you have sensitive data (e.g. varFTP_Password) or variable value is extremly large to display (e.g. varXML_Document). When masking is enabled, &quot;****&quot; is logged in the BIxPress Audit Database rather than actual value of variable. Note: You can configure list of variables you want to mask outside the package by configuring &quot;varSSISOps_FilteredVars&quot;. There are 3 places where you have to set this value (OnPreExecute, OnPostExecute, OnVariableValueChanged)."
+          DTS:DTSID="{2299EDBD-1B5F-4615-928C-7001977D34B0}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredVars">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to configure how many characters will be logged for each variable. Default variable length for logging is 4000 anything after that will be truncated. -1 = Log full variable value . There are 3 places where you have to set this value (OnPreExecute, OnPostExecute OnVariableValueChanged)."
+          DTS:DTSID="{C180A3D7-FBA7-4C77-8BBB-CBA220E00311}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_MaxVarCharsToLog">
+          <DTS:VariableValue
+            DTS:DataType="3">4000</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{9888D9EB-378B-48E2-8725-30E865445082}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_ParentSourceID">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{F181AF94-B82B-4CCC-B709-9293D1C2E9CA}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_PkgLayout">
+          <DTS:VariableValue
+            DTS:DataType="8">&lt;layout version="3" compressed="true"&gt;&lt;DTS:Executable xmlns:DTS = "www.microsoft.com/SqlServer/Dts" DTS:ExecutableType = "SSIS.Package.2"&gt;&lt;DTS:PackageVariable&gt;		&lt;DTS:Property DTS:Name = "PackageVariableValue" DTS:DataType = "8"&gt;&lt;![CDATA[H4sIAAAAAAAEAO1bYXObOBP+K5w/W1gSkpDyJpkBIa6ZSdtcnen74drJEKzYvIfBB7hNe3P//WSCbZzYiXtNmrYvzCQD0mqflZ7V7gqSw9eX/9NxVVpvdVEmeXbU473jw18AUFE8sbJ8pK1LneYfrY9JmlpxnlVRklmzIp/pokp0aVWTqLJGuRGtrOjqyuiyinlWJdPFwEn0IckLG4Djw7Mo/iMaa2uky2ScgYUAyKKpPuo1PQb2NPqUz6uT7Co/Pvy1iGaTmwZLRrMoTqpPC+Os62malUe9OC3q8aXp0gcvk7jIy/yqsod/pkNdfNCFfZJVelxElZnVoiWJdWkHNbrpfGlmltqmPYnS5HMt9J+oLPX0Mv10tK+22sbGooNpWY5TvY9h9TD7Zm4qGyeZvh96A+b6qDepqtnBYFDGEz2NSnu6GhLn08HHJLu6HmAI2eA6mqZmVV+ZqTYLOUw+GwuRi/oE96yT0Wrx34Wn0lLXOp5X2no5T6tkpi05SdKRdT4pdDQq3w1/O7WGlZG9kP5Qnr7pWef57FRfVUc9zPqiZw2OD+WNf+iiwXthRurihU7GEyNGHINZqutZlI20wT4v5rpnnUWZTm8MwwT1EWQ9q/VIxBca2rYLC5v2HRvT2ro7C4Ghu3Uh3syzLMnG1kk2SuKoyot68jf6ZT6dpbrScqLjP1pY1KawdaG+adiOigjbE/U8tM7NPims86hsYznMLJPb6Fej8VL/gxrts0LHeqSzWBuqyqowZFXl7+v79y0UBEWfLFDaGLacG588Przx9oP6aeEWRWWUZGb358VR76/rg1fzNP27Z6ls1GqHfQZ7N9KLB1j3L+4ormHaSs3eHE+1sW7V3DTIPE2NPrMPW3GhNfrU+F8juqF+sVaDXarWXbfBN9rN492laLWcRiZYlssmc98ydrA5eCnaavv6/YN4H0O62j+LR8L38LT2nnGozdeX6CMObYrd5cXvcboH3ctC7zfcGPeR4QY/oosB5NqoffUxt9fW1/bfccAtg6Dtbgx6OudE0EZOa8Hr9V2BXSaxrz8nuliOOsvNOqLtA+s+XPeRrX2OmSvZ0jnYbSBAzq21uW/4PQbvo2g5gbuE3DOhu7L8i+b3IPc/QuQYtOol89SupAbN7jw+DKpSfTDGvTABJDVpZWctZrfFyt9fZ6oo8uJ9V6I9SYnWsm66v3H18uxj1ZYS5FX0qm9+NjLDDs7fDYcnw9ezUk3MSeGiab2oQ2grlK8Ubit4/jVaI7tEfXK8RZn1ANiOxLdd+458+Bd0GREEBoD4nvlFMQQihAr4zFE+kyRwmPvu7/dbTHi0PLlu31KOwd3p7mZYOyI+Stirff9gFfwsP5+b2iQb+/l1bVC/Nu+NTs3u/qDP8jKp6sOql33q7RUfH4U3nwskEUVAOVwCghwKPBoKIJTg1Alx6CrR8faovN2X126ls6/Jb8ayqjlV7pflEOvS3M+R5trUb6YDAbHigisPUk4gZj5Hijo0DCXnSPryAj1qRvoKQ/A3MmSj7+I0H7+NjNtepvp1sYhRz2JF0zWMi2T2uCXJ3hY8ejG0G3ldErVkvhF2Ux49DLxnsm0j7Uq5iDq+oxQHHglCUy8RBwjpKxD4biA48Xzuki7lPkeptA97mFHPNfQB5DEFTF1ralwZQsCYokoEjo9gx953y57jKEq4K4HvIx8QaTaghyUFKPCZwqHjSt/v2Pte2aPKFwFRAZDEbDsCOQPCMAeUxzExNHqupB173yt7niFNSRkA7Cps9h7igAdSGB59JRUnyudhx973yp5yPeEQVwCXKMMZgS7gFIdAYhUwDn2Kwm7v/ZgvCgr9Re8JurfhP8trgjXxd86Cq66nOAruwm2dBFci3wZ5eQ58CHbfgLrG2RVPCYQYiZABjKGpZTxIAZcUm/AaBAJBjAX3unj6LNnwYfLCgGEqFAWBCCggDiLAcwUGjkOpCAIKPYk78n7EZLh8+/c2SudaTqJsrEf7pUXSpcWfIy1udYHbCXKb0BOkyj1saVLXNsmvS2JbsXd+R/RI4CKkzOGOmcNdwELAHaGACDgJEAwUgt13xB8yIv43KhZ/WdedDf6vguCS9dtxr2l/glC3HXF9JGj6vwFmE1HvB9wziC4RdsVN7lIoFHSAC5kDiKRo8VmIAegzzKRwheN2r1We5RjwEHOCYc4kEyBki5fRrseA7zseUMyDhJAAe7D7lPCMGW/Q/BvQ8T/rWh3fEDQAAA==]]&gt;&lt;/DTS:Property&gt;	&lt;DTS:Property DTS:Name = "Namespace"&gt;dts-designer-1.0&lt;/DTS:Property&gt;&lt;/DTS:PackageVariable&gt;&lt;/DTS:Executable&gt;&lt;/layout&gt;</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{B41842BC-DDBE-44E3-A4EC-0EF9800509C2}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_SourceType">
+          <DTS:VariableValue
+            DTS:DataType="8">unknown</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{A077B71D-99BE-4F75-9F88-24F8FF07DFA9}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_TaskList">
+          <DTS:VariableValue
+            DTS:DataType="8">&lt;xml AuditControlFlowVersion="6" EnableRowCountLogging="True" EnableRowCountLoggingForSource="True" EnableRowCountLoggingForDestination="True" EnableDataFlowMonitoring="True" MaxIterationCount="0" TrackAllVariables="True" TrackOnlyTagVariables="False" EnableVariableChangeTracking="True" EnableVariableChangeTrackingAdvFeatures="True" EnableVariableChangeTrackingAdvFeaturesADORec="True" LogConnectionMgrs="True"&gt;&lt;tsk id="{F214704E-0EBF-4D38-94F3-E759023B6BF2}" typ="ForLoop" p="" name="FLC Execute Multipe Child Threads" on="1" /&gt;&lt;tsk id="{09650828-A573-4D66-B12E-6E53FDBFE265}" typ="SQLTask" p="{F214704E-0EBF-4D38-94F3-E759023B6BF2}" name="SQL Stage_CBSMFSTRANS_ACCOUNT_ENTRY" on="1" /&gt;&lt;tsk id="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}" typ="ForLoop" p="" name="FLC Running Indicator" on="1" /&gt;&lt;pc id="{B0A9964D-BDC2-46DD-88C2-3D1C4131CABF}" op="2" and="True" val="0" task1="{17C4399F-452C-45D4-B804-D2EFFD67B73A}" task2="{580CE162-6218-44E0-AB45-87E124BE75E6}" p="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}" refId="Package\FLC Running Indicator.PrecedenceConstraints[Constraint]"/&gt;&lt;tsk id="{17C4399F-452C-45D4-B804-D2EFFD67B73A}" typ="SQLTask" p="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}" name="SQL ThreadCompleteCheck" on="1" /&gt;&lt;tsk id="{580CE162-6218-44E0-AB45-87E124BE75E6}" typ="PW.TASKFACTORY.TIMERTASK.TIMERTASK" p="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}" name="TF Timer Task" on="1" /&gt;&lt;pc id="{62BADC1F-59F6-4AD8-AE5E-903E7657336F}" op="2" and="True" val="0" task1="{F214704E-0EBF-4D38-94F3-E759023B6BF2}" task2="{1CE47BCF-5965-46E9-BDF2-66753D215C9A}" p="" refId="Package.PrecedenceConstraints[Constraint 1]"/&gt;&lt;/xml&gt;</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{013333E6-ED24-4900-AE89-49611B6ACAB7}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_VariableValues">
+          <DTS:VariableValue
+            DTS:DataType="8">User::intCounter,User::LogID,User::partmgmt_Database,User::partmgmt_PartitionNbr,User::partmgmt_PartitionTableName,User::partmgmt_SchemaName,User::partmgmt_Server,User::partmgmt_StagingTableName,User::partmgmt_SwitchSQL,User::RunningIndicator,User::UseManagePartition</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_OnPreExecute_Start"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{AFF57E01-3143-4BB2-90D4-DECE4C078914}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnPreExecute_Start">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableBIxAuditing]</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Package_OnPreExecute"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{EFB012AB-3CBE-4DEA-80BE-A03DAE00E14E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Package_OnPreExecute"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnPreExecute @Scope='Package',@ExecutionID=?,@SourceID=?,@SourceName=?,@InteractiveMode=?,@UserName=?,@MachineName=?,@LogCustomValues=0,@LayoutXML=?,@TaskListXML=?,@DFLayoutXML=?,@Variables=?,@Connections=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::InteractiveMode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::varSSISOps_PkgLayout"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::varSSISOps_TaskList"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="8"
+                SQLTask:DtsVariableName="User::varSSISOps_DfLayout"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="9"
+                SQLTask:DtsVariableName="User::varSSISOps_VariableValues"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="10"
+                SQLTask:DtsVariableName="User::varSSISOps_ConnectionValues"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Task_OnPreExecute"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{C57C38D0-5801-4D9E-B85C-B2A1BA548804}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnPreExecute"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnPreExecute @Scope='Task',@ExecutionID=?,@SourceID=?,@ParentSourceID=?,@SourceName=?,@SourceType=?,@LogCustomValues=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::varSSISOps_ParentSourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::varSSISOps_SourceType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[{A3F23282-DF9A-4A2E-93D5-2D2E7C9B98C5\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{A3F23282-DF9A-4A2E-93D5-2D2E7C9B98C5}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==@[System::PackageID] &amp;&amp; @[System::SourceName]==@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_OnPreExecute_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{A3F23282-DF9A-4A2E-93D5-2D2E7C9B98C5}"
+          DTS:To="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Package_OnPreExecute"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[{ABCAC09F-6DAF-433F-AE94-F00B1A79B8D7\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{ABCAC09F-6DAF-433F-AE94-F00B1A79B8D7}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]!=@[System::PackageID] &amp;&amp; @[System::SourceName]!=@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_OnPreExecute_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{ABCAC09F-6DAF-433F-AE94-F00B1A79B8D7}"
+          DTS:To="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Task_OnPreExecute"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnVariableValueChanged]"
+      DTS:CreationName="OnVariableValueChanged"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{B721F3CA-00AA-419F-A133-FF934A7FE565}"
+      DTS:EventID="2025692780"
+      DTS:EventName="OnVariableValueChanged"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{94308173-4FB8-478D-A412-3EE7A6C14A73}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{3EB7D1C5-CE65-47D0-B2DC-05AE0ABAA2A4}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_CurValue">
+          <DTS:VariableValue
+            DTS:DataSubType="ManagedSerializable"
+            DTS:DataType="13">
+            <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+              <SOAP-ENV:Body>
+                <xsd:anyType
+                  id="ref-1"></xsd:anyType>
+              </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+          </DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to list of variables you want to mask during logging process. You can use comma separated list you can use wildcard &quot; * &quot; for pattern matching names are case insensitive. This option is used to mask variable values during logging process. This option is helpful when you have sensitive data (e.g. varFTP_Password) or variable value is extremly large to display (e.g. varXML_Document). When masking is enabled, &quot;****&quot; is logged in the BIxPress Audit Database rather than actual value of variable. Note: You can configure list of variables you want to mask outside the package by configuring &quot;varSSISOps_FilteredVars&quot;. There are 3 places where you have to set this value (OnPreExecute, OnPostExecute, OnVariableValueChanged)."
+          DTS:DTSID="{39F0284D-60C1-4BFC-9380-25A619A226AA}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_FilteredVars">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. Set this variable to configure how many characters will be logged for each variable. Default variable length for logging is 4000 anything after that will be truncated. -1 = Log full variable value . There are 3 places where you have to set this value (OnPreExecute, OnPostExecute OnVariableValueChanged)."
+          DTS:DTSID="{471678C6-B357-4847-940A-A37E55A3EDB6}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="varSSISOps_MaxVarCharsToLog">
+          <DTS:VariableValue
+            DTS:DataType="3">4000</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:PropertyExpression
+        DTS:Name="Disable">@[User::varSSISOps_DisableBIxAuditing]</DTS:PropertyExpression>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_OnVariableValueChanged_Start"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{7B750899-193A-455B-99CB-8C6A5E5F222D}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnVariableValueChanged_Start"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_Task_OnVariableValueChanged"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{D6447493-C22C-499D-B1CC-6AAAD71D20C2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnVariableValueChanged"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec usp_SSISOps_Audit_OnVariableValueChanged @ExecutionID=?,@SourceID=?,@VariableName=?,@VariableValue=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::VariableName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::varSSISOps_CurValue"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnVariableValueChanged].PrecedenceConstraints[{08B22197-1BE7-49A5-A824-0CE22BD7A985\}]"
+          DTS:CreationName=""
+          DTS:DTSID="{08B22197-1BE7-49A5-A824-0CE22BD7A985}"
+          DTS:From="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_OnVariableValueChanged_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{08B22197-1BE7-49A5-A824-0CE22BD7A985}"
+          DTS:To="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_Task_OnVariableValueChanged"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnWarning]"
+      DTS:CreationName="OnWarning"
+      DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+      DTS:DTSID="{D9A6CC96-F11F-4763-9006-244423EACE90}"
+      DTS:EventID="0"
+      DTS:EventName="OnWarning"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{445EA217-022E-47E6-A8FD-16E572442330}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnWarning]\SSISOpsEhObj_OnWarning_Start"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{53410D98-9E92-48FE-B13D-BBBB1F80D57F}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_OnWarning_Start"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">@[User::varSSISOps_DisableBIxAuditing]</DTS:PropertyExpression>
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Package_OnWarning"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{4084CB97-3472-4751-9F4E-E294C592A259}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Package_OnWarning"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Package',@EventType='W',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Task_OnWarning"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DisableEventHandlers="True"
+          DTS:DTSID="{C9F4AF8F-B817-43FF-ADE0-2C6F07C0D732}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SSISOpsEhObj_Task_OnWarning"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:TransactionOption="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{77D4CBD3-058C-4DBE-9BFC-53E9C8CE677A}"
+              SQLTask:SqlStatementSource="exec dbo.usp_SSISOps_Audit_OnAlert @Scope='Task',@EventType='W',@ExecutionID=?,@SourceID=?,@SourceName=?,@SourceType='UNKNOWN',@MessageCode=?,@MessageDescription=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnWarning].PrecedenceConstraints[{256F2F26-DD4A-4CE0-B233-54289087233A\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{256F2F26-DD4A-4CE0-B233-54289087233A}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]!=@[System::PackageID] &amp;&amp; @[System::SourceName]!=@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnWarning]\SSISOpsEhObj_OnWarning_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{256F2F26-DD4A-4CE0-B233-54289087233A}"
+          DTS:To="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Task_OnWarning"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnWarning].PrecedenceConstraints[{CD2C51E9-D563-48F6-AA75-597FEFB53F6E\}]"
+          DTS:CreationName=""
+          DTS:Description="SSISOps : DON'T CHANGE PREFIX. "
+          DTS:DTSID="{CD2C51E9-D563-48F6-AA75-597FEFB53F6E}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID]==@[System::PackageID] &amp;&amp; @[System::SourceName]==@[System::PackageName] &amp;&amp; SUBSTRING(@[System::SourceName], 1, 12)!=&quot;SSISOpsEhObj&quot; &amp;&amp; @[User::varSSISOps_DisableBIxAuditing]==false"
+          DTS:From="Package.EventHandlers[OnWarning]\SSISOpsEhObj_OnWarning_Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{CD2C51E9-D563-48F6-AA75-597FEFB53F6E}"
+          DTS:To="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Package_OnWarning"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\FLC Execute Multipe Child Threads\SQL Stage_MFSTRANS_ACCOUNT_ENTRY"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="218,103"
+          Size="218,146"
+          Id="Package\FLC Execute Multipe Child Threads"
+          TopLeft="10.5,5.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\FLC Running Indicator\SQL ThreadCompleteCheck"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FLC Running Indicator\TF Timer Task"
+          TopLeft="39,107.5" />
+        <EdgeLayout
+          Id="Package\FLC Running Indicator.PrecedenceConstraints[Constraint]"
+          TopLeft="114,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="228,205"
+          Size="228,248"
+          Id="Package\FLC Running Indicator"
+          TopLeft="5.50000000000006,211.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="119.5,151.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="229,42"
+          Id="Package.EventHandlers[OnError]\SSISOpsEhObj_OnError_Start"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package.EventHandlers[OnError]\SSISOpsEhObj_Package_OnError"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package.EventHandlers[OnError]\SSISOpsEhObj_Task_OnError"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[{77432DF9-9131-4506-80AF-8BA1BEB08B2A\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[{5E2F856E-AE58-459F-8E3E-74038EB0DF1C\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="383,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_1"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="383,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_902E898EA0584026B81E535FFC881CBC_2"
+          TopLeft="75,60" />
+        <NodeLayout
+          Size="341,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_LogVariableOrConn"
+          TopLeft="0,120" />
+        <NodeLayout
+          Size="317,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_SSISOpsScript"
+          TopLeft="409,233" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_OnPostExecute_Start"
+          TopLeft="418,34" />
+        <NodeLayout
+          Size="286,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Package_OnPostExecute"
+          TopLeft="319,79" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package.EventHandlers[OnPostExecute]\SSISOpsEhObj_Task_OnPostExecute"
+          TopLeft="201,152" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{4D979E23-3470-46F1-BCE4-56AB3086E985\}]"
+          TopLeft="516,233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-249.5,-131"
+              Start="0,0"
+              End="-249.5,-123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-48.7947269303202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-48.7947269303202"
+                    Point2="0,-52.7947269303202"
+                    Point3="-4,-52.7947269303202" />
+                  <mssgle:LineSegment
+                    End="-245.5,-52.7947269303202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-245.5,-52.7947269303202"
+                    Point2="-249.5,-52.7947269303202"
+                    Point3="-249.5,-56.7947269303202" />
+                  <mssgle:LineSegment
+                    End="-249.5,-123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-132.75,-47.7947269303202,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{2000A1C0-C649-4A7B-9317-CA569D697CC3\}]"
+          TopLeft="334.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="233,39"
+              Start="0,0"
+              End="233,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="229,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="229,19.5"
+                    Point2="233,19.5"
+                    Point3="233,23.5" />
+                  <mssgle:LineSegment
+                    End="233,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="108.5,24.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{9309E270-7F90-4B6E-9BB1-7FB343F715A0\}]"
+          TopLeft="594.666666666667,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-260.166666666667,76"
+              Start="0,0"
+              End="-260.166666666667,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6716306775875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6716306775875"
+                    Point2="0,30.6716306775875"
+                    Point3="-4,30.6716306775875" />
+                  <mssgle:LineSegment
+                    End="-256.166666666667,30.6716306775875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-256.166666666667,30.6716306775875"
+                    Point2="-260.166666666667,30.6716306775875"
+                    Point3="-260.166666666667,34.6716306775875" />
+                  <mssgle:LineSegment
+                    End="-260.166666666667,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-138.083333333333,35.6716306775875,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{C474A4A5-C1B8-46B8-AD21-E4E819EC77DB\}]"
+          TopLeft="508.333333333333,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-282.333333333333,44"
+              Start="0,0"
+              End="-282.333333333333,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0352904197782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0352904197782"
+                    Point2="0,22.0352904197782"
+                    Point3="-4,22.0352904197782" />
+                  <mssgle:LineSegment
+                    End="-278.333333333333,22.0352904197782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-278.333333333333,22.0352904197782"
+                    Point2="-282.333333333333,22.0352904197782"
+                    Point3="-282.333333333333,26.0352904197782" />
+                  <mssgle:LineSegment
+                    End="-282.333333333333,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.166666666667,27.0352904197782,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{5102A1D7-C289-4963-BE45-62ABDC01241C\}]"
+          TopLeft="115,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204,-20"
+              Start="0,0"
+              End="196.5,-20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-16"
+                    Point2="0,-20"
+                    Point3="4,-20" />
+                  <mssgle:LineSegment
+                    End="196.5,-20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="74.945546875,-15,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[{94F3BEAD-5F3F-4F3B-AC96-619977ACAE91\}]"
+          TopLeft="567.5,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="NaN,NaN"
+              Start="0,0"
+              End="NaN,NaN">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,NaN" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,NaN"
+                    Point2="0,NaN"
+                    Point3="-4,NaN" />
+                  <mssgle:LineSegment
+                    End="NaN,NaN" />
+                  <mssgle:CubicBezierSegment
+                    Point1="NaN,NaN"
+                    Point2="NaN,NaN"
+                    Point3="NaN,NaN" />
+                  <mssgle:LineSegment
+                    End="NaN,NaN" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12,NaN,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_OnPreExecute_Start"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Package_OnPreExecute"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\SSISOpsEhObj_Task_OnPreExecute"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[{ABCAC09F-6DAF-433F-AE94-F00B1A79B8D7\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[{A3F23282-DF9A-4A2E-93D5-2D2E7C9B98C5\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnVariableValueChanged]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_OnVariableValueChanged_Start"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnVariableValueChanged]\SSISOpsEhObj_Task_OnVariableValueChanged"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnVariableValueChanged].PrecedenceConstraints[{08B22197-1BE7-49A5-A824-0CE22BD7A985\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnWarning]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnWarning]\SSISOpsEhObj_OnWarning_Start"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Package_OnWarning"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnWarning]\SSISOpsEhObj_Task_OnWarning"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnWarning].PrecedenceConstraints[{256F2F26-DD4A-4CE0-B233-54289087233A\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnWarning].PrecedenceConstraints[{CD2C51E9-D563-48F6-AA75-597FEFB53F6E\}]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
