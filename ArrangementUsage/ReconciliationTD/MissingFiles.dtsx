@@ -1,0 +1,836 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/3/2015 7:08:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BIDWH02"
+  DTS:CreatorName="TIGO\harsh.kumar"
+  DTS:DTSID="{2F25F100-6A78-4416-B8DD-CBD9C5DBBD26}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MissingFiles"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{367DA9AA-79D9-4CEC-9F15-BCB487DEE27D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{B19FD7B8-4039-425A-B70E-4A839308D8EE}"
+      DTS:ObjectName="PPN_DT">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">4/1/2015</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5063DC19-2E44-458D-AA11-D3A9218DC198}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PPN_DT">
+      <DTS:VariableValue
+        DTS:DataType="7">6/3/2015 7:12:31 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{65CA62EF-78B1-4250-BE45-334D01325CCC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessDates">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete the missing files if already exists"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8ED42631-9AC7-4D0F-91DC-9E4717211C49}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete the missing files if already exists"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E35A2F25-C5BD-4FF3-9AB4-78E752289E67}"
+          SQLTask:SqlStatementSource="delete from etl.Recon_MissingFiles where PPN_DT = cast(? as date)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::PPN_DT"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Missing Files"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{30E585C5-1B3E-4DDC-86D7-61090A3B41C5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Missing Files"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Missing Files\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">exec etl.Recon_MissingFiles_Lookup '4/1/2015'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (exec etl.Recon_MissingFiles_Lookup '4/1/2015') [refTable]
+where [refTable].[FileType] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FileType" dataType="DT_STR" length="8000" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileType]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Missing Files\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{E35A2F25-C5BD-4FF3-9AB4-78E752289E67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_Staging]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Missing Files\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Missing Files\Lookup.Inputs[Lookup Input].Columns[FileType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="FileType"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileType]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">FileType</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Missing Files\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Missing Files\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Missing Files\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Missing Files\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Missing Files\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Missing Files\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Missing Files\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Missing Files\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Missing Files\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[etl].[Recon_MissingFiles]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Missing Files\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E35A2F25-C5BD-4FF3-9AB4-78E752289E67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PPN_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="PPN_DT"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PPN_DT]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[PPN_DT]" />
+                    <inputColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FileType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="FileType"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FILE_TP]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileType]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FILE_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FILE_NM" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FILE_TP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FILE_TP" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TQ_GROUP]"
+                      dataType="ui1"
+                      name="TQ_GROUP" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PPN_DT]"
+                      dataType="dbDate"
+                      name="PPN_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LOAD_DT]"
+                      dataType="dbDate"
+                      name="LOAD_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeStamp]"
+                      dataType="dbTimeStamp"
+                      name="TimeStamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Missing Files\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Missing Files\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from etl.recon_filestats with (nolock) where ppn_dt = ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{A2A4817D-B63D-47B7-B5E6-7B3EF7E8B459};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Missing Files\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E35A2F25-C5BD-4FF3-9AB4-78E752289E67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecordCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecordCount]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecordCount]"
+                      name="RecordCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingRecordCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingRecordCount]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingRecordCount]"
+                      name="StagingRecordCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[SourceFileName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SourceFileName]"
+                      length="85"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[SourceFileName]"
+                      name="SourceFileName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[PPN_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PPN_DT]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[PPN_DT]"
+                      name="PPN_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileType]"
+                      length="10"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileType]"
+                      name="FileType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileCount]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileCount]"
+                      name="FileCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingFileCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingFileCount]"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingFileCount]"
+                      name="StagingFileCount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecordCount]"
+                      dataType="i4"
+                      name="RecordCount" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingRecordCount]"
+                      dataType="i4"
+                      name="StagingRecordCount" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SourceFileName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="85"
+                      name="SourceFileName" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PPN_DT]"
+                      dataType="dbDate"
+                      name="PPN_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FileType" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileCount]"
+                      dataType="i4"
+                      name="FileCount" />
+                    <externalMetadataColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingFileCount]"
+                      dataType="i4"
+                      name="StagingFileCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileCount]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileCount]"
+                      name="FileCount" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecordCount]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecordCount]"
+                      name="RecordCount" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingRecordCount]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingRecordCount]"
+                      name="StagingRecordCount" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SourceFileName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="85"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SourceFileName]"
+                      name="SourceFileName" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PPN_DT]"
+                      dataType="dbDate"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PPN_DT]"
+                      name="PPN_DT" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileType]"
+                      name="FileType" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingFileCount]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingFileCount]"
+                      name="StagingFileCount" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Missing Files.Paths[Lookup No Match Output]"
+              endId="Package\Missing Files\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Missing Files\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Missing Files.Paths[OLE DB Source Output]"
+              endId="Package\Missing Files\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Missing Files\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{861E80D0-BA4A-4F2E-A762-B581A2217557}"
+      DTS:From="Package\Delete the missing files if already exists"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Missing Files" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="265,42"
+          Id="Package\Delete the missing files if already exists"
+          TopLeft="322,63" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Missing Files"
+          TopLeft="252.5,135.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="454.5,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133,30.5"
+              Start="0,0"
+              End="-133,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.25"
+                    Point2="0,15.25"
+                    Point3="-4,15.25" />
+                  <mssgle:LineSegment
+                    End="-129,15.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129,15.25"
+                    Point2="-133,15.25"
+                    Point3="-133,19.25" />
+                  <mssgle:LineSegment
+                    End="-133,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Missing Files">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Missing Files\OLE DB Source"
+          TopLeft="126,88" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Missing Files\OLE DB Destination"
+          TopLeft="178,325" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Missing Files\Lookup"
+          TopLeft="165,208" />
+        <EdgeLayout
+          Id="Package\Missing Files.Paths[OLE DB Source Output]"
+          TopLeft="201,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.5,78"
+              Start="0,0"
+              End="21.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="17.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.5,39"
+                    Point2="21.5,39"
+                    Point3="21.5,43" />
+                  <mssgle:LineSegment
+                    End="21.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Missing Files.Paths[Lookup No Match Output]"
+          TopLeft="222.5,250">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,75"
+              Start="0,0"
+              End="41,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="37,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37,37.5"
+                    Point2="41,37.5"
+                    Point3="41,41.5" />
+                  <mssgle:LineSegment
+                    End="41,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.30638671875,42.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Missing Files\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Missing Files\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Missing Files\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

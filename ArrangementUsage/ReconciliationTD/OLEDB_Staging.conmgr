@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLEDB_Staging"
+  DTS:DTSID="{E35A2F25-C5BD-4FF3-9AB4-78E752289E67}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SrvBI01;Initial Catalog=AnalyticsStaging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Packet Size=32767;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

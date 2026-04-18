@@ -1,0 +1,916 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/27/2014 5:29:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\Pearson.mitchell"
+  DTS:DTSID="{42CAA610-BB4E-414D-B6C6-52C86D34CEE1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Analytics_RecordCount_Update_Live"
+  DTS:PackageType="5"
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{B8C9CFCD-1E4A-4A4E-B44C-910F731BBA16}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{E2A2522D-79A8-4664-814A-75015657C2D5}"
+      DTS:ObjectName="EndDate">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">11/1/2015</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{A0B23BF5-A024-4C72-9E1B-1970DA1683CE}"
+      DTS:ObjectName="FCT_DT">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">9/1/2015</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{853AF8C3-7085-4D54-97DF-93923F824C50}"
+      DTS:ObjectName="StartDate">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">10/1/2015</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FE64E834-B738-49FB-A1B9-BE07A30B58BD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dtDateProcess">
+      <DTS:VariableValue
+        DTS:DataType="7">10/22/2015</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E39237D0-4A48-4940-BB33-B63E54B7B242}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="objListOfDates">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2A34897C-FB43-4D56-B79C-80FCE6B40B54}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B3DEF56C-1F4F-4956-8FCC-6BDFB7121572}"
+          SQLTask:SqlStatementSource="SELECT DT FROM DT_DIM WHERE DT BETWEEN ? AND ?"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::objListOfDates" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::StartDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Package::EndDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{BA863913-970F-4CA0-BF6C-1170148AE843}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{DF87619F-4931-47C4-916D-A11F2366CDFE}"
+        DTS:ObjectName="{DF87619F-4931-47C4-916D-A11F2366CDFE}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::objListOfDates" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7B4F7609-7CA0-49B5-BF90-926F6AC0667E}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Update Recon Record Count Analytics"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC Analytics"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC  [etl].[Recon_RecordCount_Update_Analytics_Live] ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"@FCT_DT:Input",{FE64E834-B738-49FB-A1B9-BE07A30B58BD};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Connections[OleDbConnection]"
+                      connectionManagerID="{B3DEF56C-1F4F-4956-8FCC-6BDFB7121572}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[FileType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[FileType]"
+                          length="20"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[FileType]"
+                          name="FileType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[RecordCount]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[RecordCount]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[RecordCount]"
+                          name="RecordCount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Revenue]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[Revenue]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Revenue]"
+                          name="Revenue"
+                          precision="38"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Adate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[Adate]"
+                          length="8"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Adate]"
+                          name="Adate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[FileType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="FileType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[RecordCount]"
+                          dataType="i4"
+                          name="RecordCount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[Revenue]"
+                          dataType="numeric"
+                          name="Revenue"
+                          precision="38"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].ExternalColumns[Adate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="Adate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[Adate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[Adate]"
+                          name="Adate" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[FileType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[FileType]"
+                          name="FileType" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[RecordCount]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[RecordCount]"
+                          name="RecordCount" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[Revenue]"
+                          dataType="numeric"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[Revenue]"
+                          name="Revenue"
+                          precision="38"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Upsert Destinaton; Pragmatic Works, Inc; Task Factory (c) 2009 - 2016 Pragmatic Works, Inc; http://www.pragmaticworks.com;support@pragmaticworks.com"
+                  description="The Upsert Destination takes input data coming from the pipeline and then conditionally inserts, updates or deletes data from the destination."
+                  name="TF Upsert Destination"
+                  usesDispositions="true"
+                  version="13">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="DESTINATION_TABLE_NAME">[etl].[Recon_RecordCount]</property>
+                    <property
+                      dataType="System.Boolean"
+                      expressionType="Notify"
+                      name="ENABLE_IDENTITY_INSERT">false</property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="INSERT_ROWS_COUNT_VARIABLE">&lt;Select Variable&gt;</property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="UPDATE_ROWS_COUNT_VARIABLE">&lt;Select Variable&gt;</property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="COMMAND_TIMEOUT">0</property>
+                    <property
+                      dataType="System.Int32"
+                      expressionType="Notify"
+                      name="UPDATE_METHOD"
+                      typeConverter="PW.TaskFactory.Enums+UpsertUpdateMethod">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      expressionType="Notify"
+                      name="ACTION_UPDATE">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      expressionType="Notify"
+                      name="ACTION_INSERT">false</property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="POST_UPDATE_COLUMN"></property>
+                    <property
+                      dataType="System.Boolean"
+                      expressionType="Notify"
+                      name="TURN_OFF_INTERNAL_TRANSACTION">false</property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="ROW_FLAG_COLUMN"></property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="ROW_FLAG_COLUMN_INSERT_VALUE"></property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="ROW_FLAG_COLUMN_DELETE_VALUE"></property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="ROW_FLAG_COLUMN_REJECT_VALUE"></property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="ROW_FLAG_COLUMN_UPDATE_VALUE"></property>
+                    <property
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      expressionType="Notify"
+                      name="AccessMode"
+                      typeConverter="PW.TaskFactory.Enums+UpsertAccessModeEnum">0</property>
+                    <property
+                      dataType="System.Int32"
+                      expressionType="Notify"
+                      name="UPSERT_METHOD"
+                      typeConverter="PW.TaskFactory.Enums+UpsertMethod">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates the Upsert destination will use a custom definition for it's temp table creation"
+                      expressionType="Notify"
+                      name="Use Custom Temp Table">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Definition of the custom temp table script"
+                      expressionType="Notify"
+                      name="Custom Temp Table Definition"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Use a merge statement for the insert and updates instead of two seperate insert and update statements"
+                      expressionType="Notify"
+                      name="Use Merge Statement">false</property>
+                    <property
+                      dataType="System.String"
+                      description="The script to run before each buffer is sent to the destination"
+                      expressionType="Notify"
+                      name="Before Script"></property>
+                    <property
+                      dataType="System.String"
+                      description="The script to run after each buffer is sent to the destination"
+                      expressionType="Notify"
+                      name="After Script"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Set to true if you want the component to fail if the before script throws an exception."
+                      expressionType="Notify"
+                      name="Fail Component If Before Script Throws Exception">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Set to true if you want the component to fail if the after script throws an exception."
+                      expressionType="Notify"
+                      name="Fail Component If After Script Throws Exception">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Allows you to set a table hint for the destination table (e.g. NOLOCK - SNAPSHOT)."
+                      expressionType="Notify"
+                      name="Table Hint"></property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">PW.TaskFactory.UpsertDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Connections[DestinationConnection]"
+                      connectionManagerID="{17B15269-5ED5-403F-97A7-B5A9CE6D35F7}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[ADO_StagingModel]"
+                      description="Connection for the destination"
+                      name="DestinationConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input]"
+                      errorOrTruncationOperation="Error or Truncation"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].Columns[Adate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="Adate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[Adate]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Adate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Mapped Column for Destination"
+                              name="DestinationColumn">Adate</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column A Key Column"
+                              name="IsKeyColumn">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column An Identity Column"
+                              name="IsIdentityColumn">false</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].Columns[FileType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="FileType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[FileType]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[FileType]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Mapped Column for Destination"
+                              name="DestinationColumn">FileType</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column A Key Column"
+                              name="IsKeyColumn">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column An Identity Column"
+                              name="IsIdentityColumn">false</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].Columns[RecordCount]"
+                          cachedDataType="i4"
+                          cachedName="RecordCount"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsRecordCount_FCT]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[RecordCount]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Mapped Column for Destination"
+                              name="DestinationColumn">AnalyticsRecordCount_FCT</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column A Key Column"
+                              name="IsKeyColumn">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column An Identity Column"
+                              name="IsIdentityColumn">false</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].Columns[Revenue]"
+                          cachedDataType="numeric"
+                          cachedName="Revenue"
+                          cachedPrecision="38"
+                          cachedScale="4"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsRevenue]"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output].Columns[Revenue]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Mapped Column for Destination"
+                              name="DestinationColumn">AnalyticsRevenue</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column A Key Column"
+                              name="IsKeyColumn">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Is Column An Identity Column"
+                              name="IsIdentityColumn">false</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[Adate]"
+                          dataType="i4"
+                          name="Adate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[FileType]"
+                          dataType="wstr"
+                          length="20"
+                          name="FileType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[SourceFileCount]"
+                          dataType="i4"
+                          name="SourceFileCount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[StageFileCount]"
+                          dataType="i4"
+                          name="StageFileCount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[FileCountDifference]"
+                          dataType="i4"
+                          name="FileCountDifference" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[SourceRecordCount_PPN]"
+                          dataType="i8"
+                          name="SourceRecordCount_PPN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[StageRecordCount_PPN]"
+                          dataType="i8"
+                          name="StageRecordCount_PPN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[RecordCountDifference_PPN]"
+                          dataType="i8"
+                          name="RecordCountDifference_PPN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsStagingRecordCount_FCT]"
+                          dataType="i8"
+                          name="AnalyticsStagingRecordCount_FCT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsRecordCount_FCT]"
+                          dataType="i8"
+                          name="AnalyticsRecordCount_FCT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsRecordCountDifference_FCT]"
+                          dataType="i8"
+                          name="AnalyticsRecordCountDifference_FCT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[AnalyticsRevenue]"
+                          dataType="r8"
+                          name="AnalyticsRevenue" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[IsReconciled]"
+                          dataType="i4"
+                          name="IsReconciled" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[SubStatus]"
+                          dataType="i4"
+                          name="SubStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[SubStatusMonth]"
+                          dataType="i4"
+                          name="SubStatusMonth" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input].ExternalColumns[LastUpdatedDate]"
+                          dataType="dbTimeStamp"
+                          name="LastUpdatedDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorDescription]"
+                          dataType="wstr"
+                          length="1024"
+                          lineageId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Outputs[Error Output].Columns[ErrorDescription]"
+                          name="ErrorDescription" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics.Paths[OLE DB Source Output]"
+                  endId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination.Inputs[Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{79DDF2E0-9EE3-4753-B870-3C52FB388CA3}"
+          DTS:ObjectName="{79DDF2E0-9EE3-4753-B870-3C52FB388CA3}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::dtDateProcess" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F1470DF-B371-4921-854C-37ED923254EB}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="238,65.5" />
+        <NodeLayout
+          Size="279,42"
+          Id="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics"
+          TopLeft="115,32" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="489,116"
+          Size="489,159"
+          Id="Package\Foreach Loop Container"
+          TopLeft="73.5,158.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="318.75,107.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="&#xA;"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="29,56"
+          Id="c6fdb7d4-01da-48e6-b9fa-e8c18c9a8cc0"
+          TopLeft="944,539" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\TF Upsert Destination"
+          TopLeft="55,164" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics.Paths[OLE DB Source Output]"
+          TopLeft="145.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\DFT Update Recon Record Count Analytics\OLE_SRC Analytics">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
