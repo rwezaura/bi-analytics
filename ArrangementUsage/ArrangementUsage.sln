@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1585
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AnalyticsTD", "AnalyticsTD\AnalyticsTD.dtproj", "{C33968A5-08BB-40EA-B761-6B9FC60AE2A3}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Reconciliation", "ReconciliationTD\Reconciliation.dtproj", "{B79F9683-7D0D-42F1-893A-C72A28291075}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Utility", "UtilityTD\Utility.dtproj", "{5C27983C-2940-44C3-BD77-4C669E80FFCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B131512-CD60-4114-B81C-71F5C32049C3}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Subscriber", "SubscriberTD\Subscriber.dtproj", "{D2592590-80D8-426C-919C-3B058161F685}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "TigoCubePartitionManager", "TigoCubePartitionManagerTD\TigoCubePartitionManager.dtproj", "{6EECB9EB-6BF8-43F7-A846-9723DAAA7DF0}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Staging", "StagingTD\Staging.dtproj", "{D98F86CA-A848-43E0-9582-427E63492BD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C33968A5-08BB-40EA-B761-6B9FC60AE2A3}.Development|Default.ActiveCfg = Development
+		{C33968A5-08BB-40EA-B761-6B9FC60AE2A3}.Development|Default.Build.0 = Development
+		{B79F9683-7D0D-42F1-893A-C72A28291075}.Development|Default.ActiveCfg = Development
+		{B79F9683-7D0D-42F1-893A-C72A28291075}.Development|Default.Build.0 = Development
+		{5C27983C-2940-44C3-BD77-4C669E80FFCF}.Development|Default.ActiveCfg = Development
+		{5C27983C-2940-44C3-BD77-4C669E80FFCF}.Development|Default.Build.0 = Development
+		{D2592590-80D8-426C-919C-3B058161F685}.Development|Default.ActiveCfg = Development
+		{D2592590-80D8-426C-919C-3B058161F685}.Development|Default.Build.0 = Development
+		{6EECB9EB-6BF8-43F7-A846-9723DAAA7DF0}.Development|Default.ActiveCfg = Development
+		{6EECB9EB-6BF8-43F7-A846-9723DAAA7DF0}.Development|Default.Build.0 = Development
+		{D98F86CA-A848-43E0-9582-427E63492BD4}.Development|Default.ActiveCfg = Development
+		{D98F86CA-A848-43E0-9582-427E63492BD4}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9C93338-9C80-416E-A31C-B2A5315CE1B5}
+	EndGlobalSection
+EndGlobal
