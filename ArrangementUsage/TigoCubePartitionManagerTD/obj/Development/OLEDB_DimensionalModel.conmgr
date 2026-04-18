@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLEDB_DimensionalModel"
+  DTS:DTSID="{3C734FC2-A0D2-462C-BC06-A8CE295C640A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SrvBI02;Initial Catalog=AnalyticsTD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Packet Size=32767;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
