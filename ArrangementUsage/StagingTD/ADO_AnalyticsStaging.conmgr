@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO_AnalyticsStaging"
+  DTS:DTSID="{6E41F935-7FBB-432E-BFD7-481AAE94A2A3}"
+  DTS:CreationName="ADO.NET:SQL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SrvBI01;Initial Catalog=AnalyticsStaging;Integrated Security=True;Application Name=SSIS-UnprocessedDates_Filestats-{6E41F935-7FBB-432E-BFD7-481AAE94A2A3}10.222.150.146.AnalyticsStaging;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
