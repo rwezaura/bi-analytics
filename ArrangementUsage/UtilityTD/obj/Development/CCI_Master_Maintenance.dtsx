@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/10/2013 1:56:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\anthony.martin"
+  DTS:DTSID="{AFE5C4AB-B12E-4972-B9EF-30ACB544E803}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CCI_Master_Maintenance"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="159"
+  DTS:VersionGUID="{C417FFC9-1CB9-41AA-B5A1-1FAF3C143BD2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{393F16DD-6E08-4354-BA72-8D3F5AE98ED8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DateToProcess">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DA72F42D-BF0F-44D9-96A9-17654B4AADB7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intControlID">
+      <DTS:VariableValue
+        DTS:DataType="3">102</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C62AC70A-B099-409A-B78E-9DEAA0D6B0DD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intDropTablesFail">
+      <DTS:VariableValue
+        DTS:DataType="3">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{303E65F3-945B-412C-888C-94E831198708}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intIsSaturdayOrSaturday">
+      <DTS:VariableValue
+        DTS:DataType="20">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{58FEFBCD-102B-4F8D-AB6B-4DBFF11C41DF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intPartitionSwitchFail">
+      <DTS:VariableValue
+        DTS:DataType="3">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F70C12DB-467C-4099-B016-9D4A1E35F8E8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PPN_DT">
+      <DTS:VariableValue
+        DTS:DataType="7">11/6/2013 9:23:36 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FC3773A9-3895-41DB-8F2A-8B67ED773AC2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessDates">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B9B6122-85B4-4CEE-A544-6F00E36867ED}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ShouldProcessInopac">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC - Details on Page Compression Maintenance"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8D33D081-1B11-4A69-8173-5A6D639B0A53}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC - Details on Page Compression Maintenance">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC Page Compression Maintenance"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F466BC12-EF4E-4472-9435-F550BECA35B9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC Page Compression Maintenance">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\EPT Create Compression Tables"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{CBF3C66E-8C96-463C-A299-CAF7D119C72B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT Create Compression Tables"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>CCI_CreateCompressionTables.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL Disable Reconciliation Job"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3B89D03B-9601-4A4C-9890-C67BA2596793}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Disable Reconciliation Job"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+              SQLTask:SqlStatementSource="USE msdb;&#xA;GO&#xA;&#xA;EXEC dbo.sp_update_job&#xA;    @job_name = N'Reconciliation_Live',&#xA;    @new_name = N'Reconciliation_Live',&#xA;    @description = N'Job Disabled while recreating views for CCI Tables.',&#xA;    @enabled = 0 ;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL DROP AND RECREATE VIEWS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6E7B0967-F8B6-4A74-B083-9C40B601AB98}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL DROP AND RECREATE VIEWS"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A84AB66E-6528-4D48-87F1-17440CAC4DC4}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[vw_Recreate_view]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL Drop Unused Page Compressed tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1c397357-59fa-4bbf-94b8-049ec8688e68}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Drop Unused Page Compressed tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+              SQLTask:SqlStatementSource="Declare @execution_id bigint&#xA;EXEC [SSISDB].[catalog].[create_execution] @package_name=N'CCI_DropTables.dtsx', @execution_id=@execution_id OUTPUT, @folder_name=N'Analytics', @project_name=N'Utility', @use32bitruntime=False, @reference_id=Null&#xA;--Select @execution_id&#xA;DECLARE @var0 smallint = 2&#xA;EXEC [SSISDB].[catalog].[set_execution_parameter_value] @execution_id,  @object_type=50, @parameter_name=N'LOGGING_LEVEL', @parameter_value=@var0&#xA;EXEC [SSISDB].[catalog].[start_execution] @execution_id&#xA;&#xA;DECLARE @KeepWaiting BIT = 1&#xA;DECLARE @ExecutionStatus TINYINT&#xA;DECLARE @ErrorMessage NVARCHAR(500)&#xA;DECLARE @PackageName varchar(50) = 'Stage_CCI_DropTables.dtsx'&#xA;&#xA;WHILE @KeepWaiting = 1&#xA;BEGIN&#xA;&#xA;SELECT @ExecutionStatus = STATUS FROM SSISDB.CATALOG.EXECUTIONS WHERE execution_id = @execution_id&#xA;IF @ExecutionStatus IN (1, 2, 5, 8) --status of created, running, pending, stopping&#xA;  &#xA;BEGIN&#xA;   WAITFOR DELAY '00:00:10'&#xA;   SET @KeepWaiting = 1&#xA;END&#xA; ELSE&#xA;  IF @ExecutionStatus IN (4, 6) --status of failed or ended unexpectedtly&#xA;   &#xA;BEGIN   /*If you want processing to stop after an error uncomment two code lines below*/&#xA;    &#xA;RAISERROR (N'Drop Table operation failed, please check execution status on Stage_CCI_DropTables.dtsx', 16, 1)&#xA;    &#xA;SET @KeepWaiting = 0&#xA;SELECT 1   -- If Failure occurs we populate a variable in the package with a value of 1 (True for child package failed)&#xA;&#xA;&#xA;END&#xA;  &#xA;ELSE --stop looping statuses without raising error (success, completed, or stopped)&#xA;   &#xA;BEGIN&#xA;    &#xA;SET @KeepWaiting = 0&#xA;SELECT 0   -- If NO failure occurs we populate a variable in the package with a value of 0 (False for child package failed)&#xA;END&#xA;END&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::intDropTablesFail" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL Enable Reconciliation Job"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FEDA1305-9081-4153-9953-8460C0EDC533}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Enable Reconciliation Job"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+              SQLTask:SqlStatementSource="&#xA;USE msdb;&#xA;GO&#xA;&#xA;EXEC dbo.sp_update_job&#xA;    @job_name = N'Reconciliation_Live',&#xA;    @new_name = N'Reconciliation_Live',&#xA;    @description = N'Job enabled during non maintenance hours.',&#xA;    @enabled = 1 ;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL Partition Switch CCI Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ed83b167-39cb-4f5a-a3fa-6a455a1c7070}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Partition Switch CCI Tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+              SQLTask:SqlStatementSource="Declare @execution_id bigint&#xA;EXEC [SSISDB].[catalog].[create_execution] @package_name=N'CCI_PartitionSwitch.dtsx', @execution_id=@execution_id OUTPUT, @folder_name=N'Analytics', @project_name=N'Utility', @use32bitruntime=False, @reference_id=Null&#xA;--Select @execution_id&#xA;DECLARE @var0 smallint = 2&#xA;EXEC [SSISDB].[catalog].[set_execution_parameter_value] @execution_id,  @object_type=50, @parameter_name=N'LOGGING_LEVEL', @parameter_value=@var0&#xA;EXEC [SSISDB].[catalog].[start_execution] @execution_id&#xA;&#xA;DECLARE @KeepWaiting BIT = 1&#xA;DECLARE @ExecutionStatus TINYINT&#xA;DECLARE @ErrorMessage NVARCHAR(500)&#xA;DECLARE @PackageName varchar(50) = 'Stage_CCI_PartitionSwitch.dtsx'&#xA;&#xA;WHILE @KeepWaiting = 1&#xA;BEGIN&#xA;&#xA;SELECT @ExecutionStatus = STATUS FROM SSISDB.CATALOG.EXECUTIONS WHERE execution_id = @execution_id&#xA;IF @ExecutionStatus IN (1, 2, 5, 8) --status of created, running, pending, stopping&#xA;  &#xA;BEGIN&#xA;   WAITFOR DELAY '00:00:10'&#xA;   SET @KeepWaiting = 1&#xA;END&#xA; ELSE&#xA;  IF @ExecutionStatus IN (4, 6) --status of failed or ended unexpectedtly&#xA;   &#xA;BEGIN   /*If you want processing to stop after an error uncomment two code lines below*/&#xA;    &#xA; RAISERROR (N'Partition Switch operation failed, please check execution status on Stage_CCI_PartitionSwitch.dtsx', 16, 1)&#xA;    &#xA; SET @KeepWaiting = 0&#xA; SELECT 1   -- If Failure occurs we populate a variable in the package with a value of 1 (True for child package failed)&#xA; &#xA;END&#xA;  &#xA;ELSE --stop looping statuses without raising error (success, completed, or stopped)&#xA;   &#xA;BEGIN&#xA;    &#xA;SET @KeepWaiting = 0&#xA;SELECT 0   -- If NO failure occurs we populate a variable in the package with a value of 0 (False for child package failed)&#xA;&#xA;END&#xA;END&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::intPartitionSwitchFail" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC Page Compression Maintenance\SQL Stop Reconciliation Job"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9DB5F772-4283-46F8-88DD-B562E5EFFB85}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Stop Reconciliation Job"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+              SQLTask:SqlStatementSource="IF EXISTS(&#xA;&#x9;&#x9;SELECT TOP (1) * FROM(&#xA;&#x9;&#x9;SELECT top(1) *&#xA;&#x9;&#x9;  FROM [msdb].[dbo].[sysjobactivity]&#xA;&#x9;&#x9;  where &#xA;&#x9;&#x9;&#x9;job_id = '289D8D09-D7A5-411D-8F58-17285AAFF0DE' AND start_execution_date IS NOT NULL&#xA;&#x9;&#x9;&#x9;ORDER BY start_execution_date desc) x&#xA;&#x9;&#x9;where&#xA;&#x9;&#x9;&#x9;x.stop_execution_date is null)&#xA;&#xA;&#x9;BEGIN&#xA;&#x9;&#x9;USE msdb;&#xA;&#xA;&#x9;&#x9;&#x9;EXEC dbo.sp_stop_job&#xA;&#x9;&#x9;&#x9;&#x9;N'Reconciliation_Live' ;&#xA;&#x9;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{2FE9FDFB-2AE0-488C-A0F6-7BF1B684727F}"
+          DTS:From="Package\SEQC Page Compression Maintenance\SQL Disable Reconciliation Job"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC Page Compression Maintenance\SQL Stop Reconciliation Job" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{BFBEEB51-E701-4932-96F1-C02B2F86B6AA}"
+          DTS:From="Package\SEQC Page Compression Maintenance\SQL Stop Reconciliation Job"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC Page Compression Maintenance\EPT Create Compression Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{1273269C-445F-41A1-B2DB-F990C8AC4A87}"
+          DTS:From="Package\SEQC Page Compression Maintenance\EPT Create Compression Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SEQC Page Compression Maintenance\SQL Partition Switch CCI Tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{9E19B7A1-C00C-4AC0-86E6-6E3D1AD72D0D}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::intPartitionSwitchFail] == 0"
+          DTS:From="Package\SEQC Page Compression Maintenance\SQL Partition Switch CCI Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\SEQC Page Compression Maintenance\SQL Drop Unused Page Compressed tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{CBF2E1AC-5F8F-48F7-89D1-B064F2CE0B5C}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::intDropTablesFail] == 0"
+          DTS:From="Package\SEQC Page Compression Maintenance\SQL Drop Unused Page Compressed tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\SEQC Page Compression Maintenance\SQL DROP AND RECREATE VIEWS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{5D84EA30-D326-4530-A2F5-6631FE22604E}"
+          DTS:From="Package\SEQC Page Compression Maintenance\SQL DROP AND RECREATE VIEWS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\SEQC Page Compression Maintenance\SQL Enable Reconciliation Job" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Should we perform CCI Maintenance"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E9EBFA91-7AE1-46DE-A06C-5DEF04DF889B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Should we perform CCI Maintenance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[CCI_Maintenance] ? OUTPUT, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::intControlID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::DateToProcess"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Enable Reconciliation Job"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9C290A6A-6E92-4DE0-93D3-2929CCE8F3DF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Enable Reconciliation Job"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+          SQLTask:SqlStatementSource="&#xA;USE msdb;&#xA;GO&#xA;&#xA;EXEC dbo.sp_update_job&#xA;    @job_name = N'Reconciliation_Live',&#xA;    @new_name = N'Reconciliation_Live',&#xA;    @description = N'Job enabled during non maintenance hours.',&#xA;    @enabled = 1 ;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL UPDATE DATECOMPLETED STATUS USING CONTROL ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{63B90E90-A831-4340-B60F-F3BEF57F84E9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL UPDATE DATECOMPLETED STATUS USING CONTROL ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+          SQLTask:SqlStatementSource="EXEC CCI_ControlTable_Update ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::intControlID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4F94632-8FDA-4D1A-B993-7B9CD2C8D733}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::DateToProcess] != (DT_DATE)&quot;1/1/1900&quot;"
+      DTS:From="Package\Should we perform CCI Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\SEQC Page Compression Maintenance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE43D66B-824B-4451-ABCC-0C5069FEF59A}"
+      DTS:From="Package\SEQC Page Compression Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\SQL Enable Reconciliation Job"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{934A47FA-088B-409B-BE84-E5DB23A69D86}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::intDropTablesFail] == 0"
+      DTS:From="Package\SEQC Page Compression Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\SQL UPDATE DATECOMPLETED STATUS USING CONTROL ID" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <AnnotationLayout
+          Text="Page Compression Maintenance.&#xA;&#xA;We must dynamically stop and disable the reconciliation&#xA;process so that we can perform the maintenance&#xA;necessary for the CCI ETL Design tables. &#xA;&#xA;Step 1) Disable and rename Reconciliation_Live job.&#xA;Step 2) Stop Reconciliation_Live job.&#xA;Step 3) Create Page compression tables for twenty days out.&#xA;Step 4) Drop unused Page Compressed tables.&#xA;Step 5) Recreate CCI Views (Rec, Data, SMS)&#xA;Step 6) Enable Reconciliation Job&#xA;"
+          ParentId="Package\SEQC - Details on Page Compression Maintenance"
+          Size="331,201"
+          Id="f170aba5-bc47-4935-a092-153e133a5502"
+          TopLeft="33,30">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FFFFFFFF">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="385,316"
+          Size="385,359"
+          Id="Package\SEQC - Details on Page Compression Maintenance"
+          TopLeft="870,153" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\EPT Create Compression Tables"
+          TopLeft="33.5,172" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL Disable Reconciliation Job"
+          TopLeft="33.5,24" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL DROP AND RECREATE VIEWS"
+          TopLeft="33.5,394" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL Drop Unused Page Compressed tables"
+          TopLeft="52.5,323" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL Enable Reconciliation Job"
+          TopLeft="33.5,468" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL Partition Switch CCI Tables"
+          TopLeft="36.5,247" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\SEQC Page Compression Maintenance\SQL Stop Reconciliation Job"
+          TopLeft="33.5,98" />
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint]"
+          TopLeft="190.5,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 1]"
+          TopLeft="190.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 2]"
+          TopLeft="192,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 3]"
+          TopLeft="193.25,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,5.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 4]"
+          TopLeft="191.75,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC Page Compression Maintenance.PrecedenceConstraints[Constraint 5]"
+          TopLeft="190.5,436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="402,565"
+          Size="402,608"
+          Id="Package\SEQC Page Compression Maintenance"
+          TopLeft="405,215" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Should we perform CCI Maintenance"
+          TopLeft="478,122" />
+        <NodeLayout
+          Size="280,42"
+          Id="Package\SQL Enable Reconciliation Job"
+          TopLeft="31.25,494.5" />
+        <NodeLayout
+          Size="368,42"
+          Id="Package\SQL UPDATE DATECOMPLETED STATUS USING CONTROL ID"
+          TopLeft="424,868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="604.75,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,13.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="405,517.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-93.75,0"
+              Start="0,0"
+              End="-86.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-86.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-58.36634765625,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="607,823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,10.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="When should this job be scheduled to run?&#xA;When do we update the CCI_Status to 1? This is handled&#xA;in CCI_Application which runs more frequently."
+          ParentId="Package"
+          FontInfo="{x:Null}"
+          Size="327,72"
+          Id="bd4eaf0b-a311-4d43-8069-3c9822c014b4"
+          TopLeft="83,160" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

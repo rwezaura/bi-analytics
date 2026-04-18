@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO_Auditing"
+  DTS:DTSID="{BC171DFB-0BA7-426F-86C3-A462F0DDFA94}"
+  DTS:CreationName="ADO.NET:SQL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SrvBI01;Initial Catalog=AnalyticsAuditing;Integrated Security=True;Application Name=SSIS-Package1-{BC171DFB-0BA7-426F-86C3-A462F0DDFA94}FCT205010\EDGAR.AnalyticsAuditing1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
