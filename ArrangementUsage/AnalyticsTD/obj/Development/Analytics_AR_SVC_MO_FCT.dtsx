@@ -1,0 +1,2992 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/16/2013 2:15:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\anthony.martin"
+  DTS:DTSID="{09F75E9A-453D-448B-BDE3-2FFC7F44ED79}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Analytics_AR_SVC_MO_FCT"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="252"
+  DTS:VersionGUID="{77C27AA8-5D5B-4482-BEAD-68CF61C58CE3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C99F071F-978C-48A6-9B8E-5CDCBD208333}"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{9198DE37-5CD5-48A6-96F3-4EE97643023F}"
+      DTS:ObjectName="PPN_DT">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">6/1/2014</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{940C27FD-E99A-4521-94DD-FAE50D539683}"
+      DTS:ObjectName="SRC_OBJ_NM">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Ar_Fact</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{3514CB63-00EB-43EE-A25F-B38BA23F4D9C}"
+      DTS:ObjectName="TargetTable">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">AR_SVC_FCT</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{80E69163-4781-4F32-947C-1CC366D6183A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LogID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B99FCBA5-15AA-4EC5-9F46-3898E2B05D1E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SRC_OBJ_KEY">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{696ED86B-A38C-4271-914E-B9560D069651}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT AR_SVC_FCT"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1F59D7B8-BA22-41C6-8031-969756D643BC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT AR_SVC_FCT"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferMaxRows">@[$Project::DefaultBufferMaxRows]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferSize">@[$Project::DefaultBufferSize]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferMaxRows="50000"
+          defaultBufferSize="26214400"
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP FCT_DT_KEY"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC etl.DT_DIM_Lookup</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (EXEC etl.DT_DIM_Lookup) [refTable]
+where [refTable].[DT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DT_KEY" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DT" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[FCT_DT]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[FCT_DT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DT</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Match Output].Columns[FCT_DT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Match Output].Columns[FCT_DT_KEY]"
+                      name="FCT_DT_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DT_KEY</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DEST AR_SVC_MO_FCT"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AR_SVC_MO_FCT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 200000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[MSISDN_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MSISDN_DD"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[MSISDN_DD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[MSISDN_DD]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[RND_DRTN]"
+                      cachedDataType="numeric"
+                      cachedName="RND_DRTN"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RND_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RND_DRTN]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_W_IDR_REV_DRTN]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_W_IDR_REV_DRTN"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_DRTN]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_WOUT_REV_DRTN]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_WOUT_REV_DRTN"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_WOUT_REV_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_DRTN]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[FCT_DT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[REAL_DRTN]"
+                      cachedDataType="numeric"
+                      cachedName="REAL_DRTN"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[REAL_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[REAL_DRTN]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_DRTN]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_DRTN"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_DRTN]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[AR_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AR_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[AR_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[PLAN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PLAN_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PLAN_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PLAN_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[SVC_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[PD_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PD_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PD_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PD_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[NBR_USG]"
+                      cachedDataType="numeric"
+                      cachedName="NBR_USG"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_USG]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_USG]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_USG"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_USG]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BYTES_USG]"
+                      cachedDataType="numeric"
+                      cachedName="BYTES_USG"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_USG]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BYTES_UPLD]"
+                      cachedDataType="numeric"
+                      cachedName="BYTES_UPLD"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_UPLD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_UPLD]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BYTES_DWLD]"
+                      cachedDataType="numeric"
+                      cachedName="BYTES_DWLD"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_DWLD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_DWLD]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILLD_BYTES]"
+                      cachedDataType="numeric"
+                      cachedName="BILLD_BYTES"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILLD_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILLD_BYTES]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_W_IDR_REV_BYTES]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_W_IDR_REV_BYTES"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_BYTES]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_WOUT_REV_BYTES]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_WOUT_REV_BYTES"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_WOUT_REV_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_BYTES]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_AMT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_TAX]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_TAX"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_TAX]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_W_IDR_REV_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_W_IDR_REV_AMT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_0_W_IDR_REV_TAX]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_0_W_IDR_REV_TAX"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_TAX]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BAL_MVMT]"
+                      cachedDataType="numeric"
+                      cachedName="BAL_MVMT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BAL_MVMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BAL_MVMT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[FCT_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="FCT_DT_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Match Output].Columns[FCT_DT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BS_LN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BS_LN_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[IN_HM_SVC_PVDR_KEY]"
+                      cachedDataType="i4"
+                      cachedName="IN_HM_SVC_PVDR_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[IN_HM_SVC_PVDR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_HM_SVC_PVDR_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[OUT_HM_SVC_PVDR_KEY]"
+                      cachedDataType="i4"
+                      cachedName="OUT_HM_SVC_PVDR_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[OUT_HM_SVC_PVDR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_HM_SVC_PVDR_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[PEAK_TM_SEG_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PEAK_TM_SEG_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[SVC_USG_AVY_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_USG_AVY_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_AVY_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_AVY_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[ACS_CNL_KEY]"
+                      cachedDataType="i4"
+                      cachedName="ACS_CNL_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[ACS_CNL_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[ACS_CNL_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[IN_ROUTE_KEY]"
+                      cachedDataType="i4"
+                      cachedName="IN_ROUTE_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[IN_ROUTE_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_ROUTE_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[OUT_ROUTE_KEY]"
+                      cachedDataType="i4"
+                      cachedName="OUT_ROUTE_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[OUT_ROUTE_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_ROUTE_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[CCY_KEY]"
+                      cachedDataType="i4"
+                      cachedName="CCY_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[CCY_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CCY_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[LOAN_TP_KEY]"
+                      cachedDataType="i4"
+                      cachedName="LOAN_TP_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LOAN_TP_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_TP_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[SVC_USG_COMPL_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_USG_COMPL_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[BILL_AMT_CORE_WLLT]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_AMT_CORE_WLLT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT_CORE_WLLT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT_CORE_WLLT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[CNTRCT_SUBSET_ID_DD]"
+                      cachedDataType="i4"
+                      cachedName="CNTRCT_SUBSET_ID_DD"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[CNTRCT_SUBSET_ID_DD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CNTRCT_SUBSET_ID_DD]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[RLD_VAL]"
+                      cachedDataType="numeric"
+                      cachedName="RLD_VAL"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RLD_VAL]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_VAL]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[RLD_TAX]"
+                      cachedDataType="numeric"
+                      cachedName="RLD_TAX"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RLD_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_TAX]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[LOAN_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="LOAN_AMT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LOAN_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[LATE_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="LATE_FEE"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LATE_FEE]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LATE_FEE]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[NEW_DUE_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="NEW_DUE_AMT"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NEW_DUE_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NEW_DUE_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[NBR_TRX]"
+                      cachedDataType="i4"
+                      cachedName="NBR_TRX"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_TRX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_TRX]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[GEO_KEY]"
+                      cachedDataType="i4"
+                      cachedName="GEO_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[GEO_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[GEO_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[NTW_KEY]"
+                      cachedDataType="i4"
+                      cachedName="NTW_KEY"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NTW_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NTW_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[Int_KATTIR]"
+                      cachedDataType="numeric"
+                      cachedName="Int_KATTIR"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[Int_KATTIR]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[Int_KATTIR]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[KATTIR_5013]"
+                      cachedDataType="numeric"
+                      cachedName="KATTIR_5013"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[KATTIR_5013]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5013]" />
+                    <inputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].Columns[KATTIR_5014]"
+                      cachedDataType="numeric"
+                      cachedName="KATTIR_5014"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[KATTIR_5014]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5014]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      dataType="i4"
+                      name="AR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PLAN_KEY]"
+                      dataType="i4"
+                      name="PLAN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_KEY]"
+                      dataType="i4"
+                      name="SVC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PD_KEY]"
+                      dataType="i4"
+                      name="PD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_USG]"
+                      dataType="numeric"
+                      name="NBR_USG"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[REAL_DRTN]"
+                      dataType="numeric"
+                      name="REAL_DRTN"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RND_DRTN]"
+                      dataType="numeric"
+                      name="RND_DRTN"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_DRTN]"
+                      dataType="numeric"
+                      name="BILL_DRTN"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_DRTN]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_DRTN"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_WOUT_REV_DRTN]"
+                      dataType="numeric"
+                      name="BILL_0_WOUT_REV_DRTN"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_USG]"
+                      dataType="numeric"
+                      name="BILL_USG"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_USG]"
+                      dataType="numeric"
+                      name="BYTES_USG"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_UPLD]"
+                      dataType="numeric"
+                      name="BYTES_UPLD"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BYTES_DWLD]"
+                      dataType="numeric"
+                      name="BYTES_DWLD"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILLD_BYTES]"
+                      dataType="numeric"
+                      name="BILLD_BYTES"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_BYTES]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_BYTES"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_WOUT_REV_BYTES]"
+                      dataType="numeric"
+                      name="BILL_0_WOUT_REV_BYTES"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT]"
+                      dataType="numeric"
+                      name="BILL_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_TAX]"
+                      dataType="numeric"
+                      name="BILL_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_AMT]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_TAX]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BAL_MVMT]"
+                      dataType="numeric"
+                      name="BAL_MVMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MSISDN_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[IN_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      name="IN_HM_SVC_PVDR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[OUT_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      name="OUT_HM_SVC_PVDR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[IN_ROUTE_KEY]"
+                      dataType="i4"
+                      name="IN_ROUTE_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[OUT_ROUTE_KEY]"
+                      dataType="i4"
+                      name="OUT_ROUTE_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      name="PEAK_TM_SEG_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_AVY_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_AVY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[ACS_CNL_KEY]"
+                      dataType="i4"
+                      name="ACS_CNL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[CCY_KEY]"
+                      dataType="i4"
+                      name="CCY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LOAN_TP_KEY]"
+                      dataType="i4"
+                      name="LOAN_TP_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT_CORE_WLLT]"
+                      dataType="numeric"
+                      name="BILL_AMT_CORE_WLLT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RLD_VAL]"
+                      dataType="numeric"
+                      name="RLD_VAL"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[RLD_TAX]"
+                      dataType="numeric"
+                      name="RLD_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LOAN_AMT]"
+                      dataType="numeric"
+                      name="LOAN_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[LATE_FEE]"
+                      dataType="numeric"
+                      name="LATE_FEE"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NEW_DUE_AMT]"
+                      dataType="numeric"
+                      name="NEW_DUE_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_TRX]"
+                      dataType="i4"
+                      name="NBR_TRX" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[CNTRCT_SUBSET_ID_DD]"
+                      dataType="i4"
+                      name="CNTRCT_SUBSET_ID_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[GEO_KEY]"
+                      dataType="i4"
+                      name="GEO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[NTW_KEY]"
+                      dataType="i4"
+                      name="NTW_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[Int_KATTIR]"
+                      dataType="numeric"
+                      name="Int_KATTIR"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[KATTIR_5013]"
+                      dataType="numeric"
+                      name="KATTIR_5013"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input].ExternalColumns[KATTIR_5014]"
+                      dataType="numeric"
+                      name="KATTIR_5014"
+                      precision="18"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC AR_SVC_FCT_Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC etl.AR_SVC_MO_FCT_Source ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Query_OLE_SRC_OCSREC</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"@FCT_DT:Input",{9198DE37-A32A-48A6-96F3-4EE97643023F};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[MSISDN_DD]"
+                      length="50"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[MSISDN_DD]"
+                      name="MSISDN_DD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RND_DRTN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RND_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RND_DRTN]"
+                      name="RND_DRTN"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_DRTN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_DRTN]"
+                      name="BILL_0_W_IDR_REV_DRTN"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_DRTN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_WOUT_REV_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_DRTN]"
+                      name="BILL_0_WOUT_REV_DRTN"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      name="FCT_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[REAL_DRTN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[REAL_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[REAL_DRTN]"
+                      name="REAL_DRTN"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_DRTN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_DRTN]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_DRTN]"
+                      name="BILL_DRTN"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[AR_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[AR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[AR_KEY]"
+                      name="AR_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PLAN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PLAN_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PLAN_KEY]"
+                      name="PLAN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_KEY]"
+                      name="SVC_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PD_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PD_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PD_KEY]"
+                      name="PD_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_USG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NBR_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_USG]"
+                      name="NBR_USG"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_USG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_USG]"
+                      name="BILL_USG"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_USG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_USG]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_USG]"
+                      name="BYTES_USG"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_UPLD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_UPLD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_UPLD]"
+                      name="BYTES_UPLD"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_DWLD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_DWLD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BYTES_DWLD]"
+                      name="BYTES_DWLD"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILLD_BYTES]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILLD_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILLD_BYTES]"
+                      name="BILLD_BYTES"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_BYTES]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_BYTES]"
+                      name="BILL_0_W_IDR_REV_BYTES"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_BYTES]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_WOUT_REV_BYTES]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_WOUT_REV_BYTES]"
+                      name="BILL_0_WOUT_REV_BYTES"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT]"
+                      name="BILL_AMT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_TAX]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_TAX]"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_AMT]"
+                      name="BILL_0_W_IDR_REV_AMT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_TAX]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_0_W_IDR_REV_TAX]"
+                      name="BILL_0_W_IDR_REV_TAX"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BAL_MVMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BAL_MVMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BAL_MVMT]"
+                      name="BAL_MVMT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[IN_HM_SVC_PVDR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_HM_SVC_PVDR_KEY]"
+                      name="IN_HM_SVC_PVDR_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[OUT_HM_SVC_PVDR_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_HM_SVC_PVDR_KEY]"
+                      name="OUT_HM_SVC_PVDR_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]"
+                      name="PEAK_TM_SEG_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_AVY_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_AVY_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_AVY_KEY]"
+                      name="SVC_USG_AVY_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[ACS_CNL_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[ACS_CNL_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[ACS_CNL_KEY]"
+                      name="ACS_CNL_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_ROUTE_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[IN_ROUTE_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[IN_ROUTE_KEY]"
+                      name="IN_ROUTE_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_ROUTE_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[OUT_ROUTE_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[OUT_ROUTE_KEY]"
+                      name="OUT_ROUTE_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CCY_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[CCY_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CCY_KEY]"
+                      name="CCY_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_TP_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LOAN_TP_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_TP_KEY]"
+                      name="LOAN_TP_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]"
+                      name="SVC_USG_COMPL_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT_CORE_WLLT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT_CORE_WLLT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[BILL_AMT_CORE_WLLT]"
+                      name="BILL_AMT_CORE_WLLT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CNTRCT_SUBSET_ID_DD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[CNTRCT_SUBSET_ID_DD]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[CNTRCT_SUBSET_ID_DD]"
+                      name="CNTRCT_SUBSET_ID_DD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_VAL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RLD_VAL]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_VAL]"
+                      name="RLD_VAL"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_TAX]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RLD_TAX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[RLD_TAX]"
+                      name="RLD_TAX"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LOAN_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LOAN_AMT]"
+                      name="LOAN_AMT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LATE_FEE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LATE_FEE]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[LATE_FEE]"
+                      name="LATE_FEE"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NEW_DUE_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NEW_DUE_AMT]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NEW_DUE_AMT]"
+                      name="NEW_DUE_AMT"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_TRX]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NBR_TRX]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NBR_TRX]"
+                      name="NBR_TRX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[GEO_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[GEO_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[GEO_KEY]"
+                      name="GEO_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NTW_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NTW_KEY]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[NTW_KEY]"
+                      name="NTW_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5013]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[KATTIR_5013]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5013]"
+                      name="KATTIR_5013"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5014]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[KATTIR_5014]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[KATTIR_5014]"
+                      name="KATTIR_5014"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[Int_KATTIR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[Int_KATTIR]"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].Columns[Int_KATTIR]"
+                      name="Int_KATTIR"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MSISDN_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RND_DRTN]"
+                      dataType="numeric"
+                      name="RND_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_DRTN]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_WOUT_REV_DRTN]"
+                      dataType="numeric"
+                      name="BILL_0_WOUT_REV_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[REAL_DRTN]"
+                      dataType="numeric"
+                      name="REAL_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_DRTN]"
+                      dataType="numeric"
+                      name="BILL_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[AR_KEY]"
+                      dataType="i4"
+                      name="AR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PLAN_KEY]"
+                      dataType="i4"
+                      name="PLAN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_KEY]"
+                      dataType="i4"
+                      name="SVC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PD_KEY]"
+                      dataType="i4"
+                      name="PD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NBR_USG]"
+                      dataType="numeric"
+                      name="NBR_USG"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_USG]"
+                      dataType="numeric"
+                      name="BILL_USG"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_USG]"
+                      dataType="numeric"
+                      name="BYTES_USG"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_UPLD]"
+                      dataType="numeric"
+                      name="BYTES_UPLD"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BYTES_DWLD]"
+                      dataType="numeric"
+                      name="BYTES_DWLD"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILLD_BYTES]"
+                      dataType="numeric"
+                      name="BILLD_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_BYTES]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_WOUT_REV_BYTES]"
+                      dataType="numeric"
+                      name="BILL_0_WOUT_REV_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT]"
+                      dataType="numeric"
+                      name="BILL_AMT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_TAX]"
+                      dataType="numeric"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_AMT]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_AMT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_0_W_IDR_REV_TAX]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_TAX"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BAL_MVMT]"
+                      dataType="numeric"
+                      name="BAL_MVMT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[IN_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      name="IN_HM_SVC_PVDR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[OUT_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      name="OUT_HM_SVC_PVDR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      name="PEAK_TM_SEG_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_AVY_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_AVY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[ACS_CNL_KEY]"
+                      dataType="i4"
+                      name="ACS_CNL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[IN_ROUTE_KEY]"
+                      dataType="i4"
+                      name="IN_ROUTE_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[OUT_ROUTE_KEY]"
+                      dataType="i4"
+                      name="OUT_ROUTE_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[CCY_KEY]"
+                      dataType="i4"
+                      name="CCY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LOAN_TP_KEY]"
+                      dataType="i4"
+                      name="LOAN_TP_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT_CORE_WLLT]"
+                      dataType="numeric"
+                      name="BILL_AMT_CORE_WLLT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[CNTRCT_SUBSET_ID_DD]"
+                      dataType="i4"
+                      name="CNTRCT_SUBSET_ID_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RLD_VAL]"
+                      dataType="numeric"
+                      name="RLD_VAL"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[RLD_TAX]"
+                      dataType="numeric"
+                      name="RLD_TAX"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LOAN_AMT]"
+                      dataType="numeric"
+                      name="LOAN_AMT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[LATE_FEE]"
+                      dataType="numeric"
+                      name="LATE_FEE"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NEW_DUE_AMT]"
+                      dataType="numeric"
+                      name="NEW_DUE_AMT"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NBR_TRX]"
+                      dataType="i4"
+                      name="NBR_TRX" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[GEO_KEY]"
+                      dataType="i4"
+                      name="GEO_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[NTW_KEY]"
+                      dataType="i4"
+                      name="NTW_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[KATTIR_5013]"
+                      dataType="numeric"
+                      name="KATTIR_5013"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[KATTIR_5014]"
+                      dataType="numeric"
+                      name="KATTIR_5014"
+                      precision="38"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output].ExternalColumns[Int_KATTIR]"
+                      dataType="numeric"
+                      name="Int_KATTIR"
+                      precision="38"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[REAL_DRTN]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[REAL_DRTN]"
+                      name="REAL_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[AR_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[AR_KEY]"
+                      name="AR_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[GEO_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[GEO_KEY]"
+                      name="GEO_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NTW_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NTW_KEY]"
+                      name="NTW_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PLAN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PLAN_KEY]"
+                      name="PLAN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_KEY]"
+                      name="SVC_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PD_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PD_KEY]"
+                      name="PD_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[IN_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[IN_HM_SVC_PVDR_KEY]"
+                      name="IN_HM_SVC_PVDR_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[OUT_HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[OUT_HM_SVC_PVDR_KEY]"
+                      name="OUT_HM_SVC_PVDR_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[PEAK_TM_SEG_KEY]"
+                      name="PEAK_TM_SEG_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_USG_AVY_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_USG_AVY_KEY]"
+                      name="SVC_USG_AVY_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ACS_CNL_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ACS_CNL_KEY]"
+                      name="ACS_CNL_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[IN_ROUTE_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[IN_ROUTE_KEY]"
+                      name="IN_ROUTE_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[OUT_ROUTE_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[OUT_ROUTE_KEY]"
+                      name="OUT_ROUTE_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[CCY_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[CCY_KEY]"
+                      name="CCY_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LOAN_TP_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LOAN_TP_KEY]"
+                      name="LOAN_TP_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_KEY]"
+                      name="SVC_USG_COMPL_KEY" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_AMT_CORE_WLLT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_AMT_CORE_WLLT]"
+                      name="BILL_AMT_CORE_WLLT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[CNTRCT_SUBSET_ID_DD]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[CNTRCT_SUBSET_ID_DD]"
+                      name="CNTRCT_SUBSET_ID_DD" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RLD_VAL]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RLD_VAL]"
+                      name="RLD_VAL"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RLD_TAX]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RLD_TAX]"
+                      name="RLD_TAX"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LOAN_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LOAN_AMT]"
+                      name="LOAN_AMT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LATE_FEE]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[LATE_FEE]"
+                      name="LATE_FEE"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NEW_DUE_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NEW_DUE_AMT]"
+                      name="NEW_DUE_AMT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NBR_USG]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NBR_USG]"
+                      name="NBR_USG"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_DRTN]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_DRTN]"
+                      name="BILL_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[MSISDN_DD]"
+                      name="MSISDN_DD" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      name="FCT_DT" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RND_DRTN]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[RND_DRTN]"
+                      name="RND_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_DRTN]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_DRTN]"
+                      name="BILL_0_W_IDR_REV_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_USG]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_USG]"
+                      name="BILL_USG"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_USG]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_USG]"
+                      name="BYTES_USG"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_UPLD]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_UPLD]"
+                      name="BYTES_UPLD"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_DWLD]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BYTES_DWLD]"
+                      name="BYTES_DWLD"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILLD_BYTES]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILLD_BYTES]"
+                      name="BILLD_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_BYTES]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_BYTES]"
+                      name="BILL_0_W_IDR_REV_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[Int_KATTIR]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[Int_KATTIR]"
+                      name="Int_KATTIR"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_WOUT_REV_BYTES]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_WOUT_REV_BYTES]"
+                      name="BILL_0_WOUT_REV_BYTES"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_AMT]"
+                      name="BILL_AMT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_TAX]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_TAX]"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_AMT]"
+                      name="BILL_0_W_IDR_REV_AMT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_TAX]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_W_IDR_REV_TAX]"
+                      name="BILL_0_W_IDR_REV_TAX"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BAL_MVMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BAL_MVMT]"
+                      name="BAL_MVMT"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[KATTIR_5013]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[KATTIR_5013]"
+                      name="KATTIR_5013"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[KATTIR_5014]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[KATTIR_5014]"
+                      name="KATTIR_5014"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_WOUT_REV_DRTN]"
+                      dataType="numeric"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[BILL_0_WOUT_REV_DRTN]"
+                      name="BILL_0_WOUT_REV_DRTN"
+                      precision="38"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NBR_TRX]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[NBR_TRX]"
+                      name="NBR_TRX" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT AR_SVC_FCT.Paths[Lookup Match Output]"
+              endId="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT AR_SVC_FCT.Paths[OLE DB Source Output]"
+              endId="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Delete FCT_DT"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1AB0C997-086A-45E3-83B9-D3CA3678C1D8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Delete FCT_DT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{13F4484A-E5D7-4BB9-B084-A2698F57C334}"
+          SQLTask:SqlStatementSource="EXEC dbo.AR_SVC_MO_FCT_Delete ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::PPN_DT"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Get LogID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1676F04D-7270-4A55-92B8-EBBA3ABDF339}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Get LogID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+          SQLTask:SqlStatementSource="EXEC dbo.PackageExecutionLog_GetLogID ?, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::LogID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Get SRC_OBJ_KEY"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1D8798BF-F66D-4384-BF1D-27BD7460FE50}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Get SRC_OBJ_KEY"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{13F4484A-E5D7-4BB9-B084-A2698F57C334}"
+          SQLTask:SqlStatementSource="EXEC etl.SRC_OBJ_DIM_Lookup ?, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::SRC_OBJ_NM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::SRC_OBJ_KEY"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C73164B5-7A07-4C43-9F47-173B744A0D60}"
+      DTS:From="Package\SQL Get LogID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Get SRC_OBJ_KEY" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0E1CD2B1-8FFA-4BB5-90DB-56422540CB42}"
+      DTS:From="Package\SQL Get SRC_OBJ_KEY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Delete FCT_DT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3213C433-F956-409D-9BEE-F8DFFA98D6F0}"
+      DTS:From="Package\SQL Delete FCT_DT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DFT AR_SVC_FCT" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="231,42"
+          Id="Package\DFT AR_SVC_FCT"
+          TopLeft="196.803674686427,333.852981840464" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\SQL Delete FCT_DT"
+          TopLeft="196.803674686427,244.129513936247" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\SQL Get LogID"
+          TopLeft="196.803674686427,64.682578127811" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\SQL Get SRC_OBJ_KEY"
+          TopLeft="196.803674686427,154.406046032029" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="312.303674686427,106.682578127811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7234679042178"
+              Start="0,0"
+              End="0,40.2234679042178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2234679042178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="312.303674686427,196.406046032029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7234679042178"
+              Start="0,0"
+              End="0,40.2234679042178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2234679042178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="312.303674686427,286.129513936247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7234679042178"
+              Start="0,0"
+              End="0,40.2234679042178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2234679042178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="{84C70A23-806E-4ADE-8A2B-6830250DBAF5}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{98C1E829-49DC-45F0-860C-1A7FF6877892}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{E3366DFD-D03A-450D-96C4-A36B395B8509}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{B913615D-A349-4C3C-A1F0-9F4331115CC4}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{0318D38D-DBF2-49A4-8C00-D589CB31A8D3}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{F00E7F5F-7F8B-426B-AAAA-C33C4C17C689}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{52F576D5-4C4E-4992-9B4C-03EE169E01FA}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{B72EE8F8-0733-4844-99EE-D6C9BB86E175}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{348A4A82-E239-4BF1-A18B-6ACB4E77C1F2}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{BDCAFB94-5BDF-445D-94E7-C62612B904C2}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{54CE4BB6-B286-45D3-B45B-5C231B3F3472}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{2537E6D9-CDF3-4C40-B4BB-389B4FDD7AB5}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{53E0822A-12BB-4962-8924-984007FD1AFB}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{EE55F62D-AD7A-42BF-B964-7C7F8B1554C1}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{5B3D0193-0398-45A1-8155-750AE334986C}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{5D23FC14-9E87-4E1E-93E8-8E272FDC00EB}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{798ADAAB-62DA-42C9-8A00-752F864FDF07}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{7D0B8A9F-ED87-4D98-A7AC-2E1D6650A600}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{B5357E8C-934B-4EC2-9E07-8C2A5B6FF706}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{CA5F632E-3010-4220-A9ED-2BCA68DA0148}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{C3243C5A-AD9C-400E-80D3-9B936F9FF936}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{1B3FF254-2646-4F65-B47B-2B5696259256}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{BE68F5E2-D9C3-4B40-9991-83B46C8D308A}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{E58DDAE5-0236-491B-B92A-F2D966F0C988}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{24A76292-F97E-4090-BCCA-8121BE986435}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{48463E5B-FE65-49C8-BA38-6349693C6FC2}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{BE52722B-1859-41AD-AA91-CCA7DEBB2C56}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{9B3E2C87-A052-4B9B-8D3A-47817C8132D1}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{1126B566-A252-4B39-975D-9B729943E982}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{99DB079C-D466-4F0B-8081-E81F23712423}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{7E643EED-7388-4571-BB34-46C65CA7F916}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{FE9B3D27-1975-4758-A033-AE82DEF7C5D5}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{8F10BAE4-C95F-4829-8458-D87951174159}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{F76BB3BE-DE6A-41C4-8A68-A412D6FA36D0}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{3D062BF5-B6A1-4805-983E-B18DBED18113}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{CDC82903-DB95-4982-AE51-29B83A157B4C}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DFT AR_SVC_FCT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="250,42"
+          Id="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT"
+          TopLeft="4.50000000000003,373.5" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source"
+          TopLeft="5.50000000000003,5.5" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY"
+          TopLeft="5.50000000000003,190.5" />
+        <NodeLayout
+          Size="250,42"
+          Id="4"
+          TopLeft="5.50000000000003,98" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY"
+          TopLeft="5.50000000000003,283" />
+        <EdgeLayout
+          Id="310"
+          TopLeft="130.5,232.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.6953125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="313"
+          TopLeft="130.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="312"
+          TopLeft="130,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5"
+              Start="0,0"
+              End="0,41">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="315"
+          TopLeft="130.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT AR_SVC_FCT\LKP FCT_DT_KEY">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT AR_SVC_FCT\OLE_DEST AR_SVC_MO_FCT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT AR_SVC_FCT\OLE_SRC AR_SVC_FCT_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

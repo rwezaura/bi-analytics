@@ -1,0 +1,2683 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/30/2013 8:36:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\Pearson.Mitchell"
+  DTS:DTSID="{5B1B59AC-FD28-492B-9994-226208AC4CF2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Analytics_VAS_PRCH_FCT_Error"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{C3D9FA22-8CED-44CB-B12E-B6F753E37252}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{32D3449B-E005-48C7-BC01-6EAD0D03242F}"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT LOAD VAS_PRCH_FCT"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{750CCE37-47E0-4885-9384-A14CB21D2F72}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT LOAD VAS_PRCH_FCT"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferMaxRows">@[$Project::DefaultBufferMaxRows]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferSize">@[$Project::DefaultBufferSize]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferMaxRows="50000"
+          defaultBufferSize="26214400"
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP ARRANGEMENT KEY"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [AR_KEY]
+      ,[MSISDN_DD]
+  FROM [dbo].[AR_DIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [AR_KEY]
+      ,[MSISDN_DD]
+  FROM [dbo].[AR_DIM]) [refTable]
+where [refTable].[MSISDN_DD] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AR_KEY" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MSISDN_DD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input].Columns[MSISDN_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="MSISDN_DD"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MSISDN_DD</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Match Output].Columns[AR_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Match Output].Columns[AR_KEY]"
+                      name="AR_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AR_KEY</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT Matched Records">
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE _SRC VAS_PRCH_FCT_Error"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[etl].[VAS_PRCH_FCT_Error]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC etl.VAS_PRCH_FCT_ERROR</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_DT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BGN_EV_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_DT_KEY]"
+                      name="BGN_EV_DT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_TM_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BGN_EV_TM_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_TM_KEY]"
+                      name="BGN_EV_TM_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]"
+                      name="AUDT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]"
+                      name="STAGE_AUDT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SWTCH_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SWTCH_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SWTCH_KEY]"
+                      name="SWTCH_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]"
+                      name="FCT_DT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]"
+                      name="PEAK_TM_SEG_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PLAN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PLAN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PLAN_KEY]"
+                      name="PLAN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]"
+                      name="SVC_USG_COMPL_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_KEY]"
+                      name="SVC_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PD_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PD_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PD_KEY]"
+                      name="PD_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CCY_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[CCY_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CCY_KEY]"
+                      name="CCY_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_AMT]"
+                      name="BILL_AMT"
+                      precision="24"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_TAX]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BILL_TAX]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_TAX]"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[MSISDN_DD]"
+                      length="9"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]"
+                      name="MSISDN_DD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      name="FCT_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]"
+                      name="RTG_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CST_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[CST_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CST_KEY]"
+                      name="CST_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      length="50"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]"
+                      name="UNQ_CD_SRC_STM1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      length="50"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]"
+                      name="UNQ_CD_SRC_STM2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[NMB_USG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[NMB_USG]"
+                      length="1"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[NMB_USG]"
+                      name="NMB_USG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[ORIG_NMB_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[ORIG_NMB_DD]"
+                      length="114"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[ORIG_NMB_DD]"
+                      name="ORIG_NMB_DD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_RSN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_RSN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_RSN_KEY]"
+                      name="SVC_USG_COMPL_RSN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BGN_EV_DT_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BGN_EV_TM_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_TM_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SWTCH_KEY]"
+                      dataType="i4"
+                      name="SWTCH_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      name="PEAK_TM_SEG_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PLAN_KEY]"
+                      dataType="i4"
+                      name="PLAN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_KEY]"
+                      dataType="i4"
+                      name="SVC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[PD_KEY]"
+                      dataType="i4"
+                      name="PD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[CCY_KEY]"
+                      dataType="i4"
+                      name="CCY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BILL_AMT]"
+                      dataType="numeric"
+                      name="BILL_AMT"
+                      precision="24"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BILL_TAX]"
+                      dataType="numeric"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="MSISDN_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[RTG_DT]"
+                      dataType="dbDate"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[CST_KEY]"
+                      dataType="i4"
+                      name="CST_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[NMB_USG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="NMB_USG" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[ORIG_NMB_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="114"
+                      name="ORIG_NMB_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SVC_USG_COMPL_RSN_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_RSN_KEY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BGN_EV_DT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BGN_EV_DT_KEY]"
+                      name="BGN_EV_DT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM1]"
+                      name="UNQ_CD_SRC_STM1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM2]"
+                      name="UNQ_CD_SRC_STM2" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BGN_EV_TM_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BGN_EV_TM_KEY]"
+                      name="BGN_EV_TM_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AUDT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AUDT_KEY]"
+                      name="AUDT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDT_KEY]"
+                      name="STAGE_AUDT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SWTCH_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SWTCH_KEY]"
+                      name="SWTCH_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT_KEY]"
+                      name="FCT_DT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PEAK_TM_SEG_KEY]"
+                      name="PEAK_TM_SEG_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PLAN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PLAN_KEY]"
+                      name="PLAN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_KEY]"
+                      name="SVC_USG_COMPL_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_KEY]"
+                      name="SVC_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PD_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[PD_KEY]"
+                      name="PD_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[CCY_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[CCY_KEY]"
+                      name="CCY_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[NMB_USG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[NMB_USG]"
+                      name="NMB_USG" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BILL_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BILL_AMT]"
+                      name="BILL_AMT"
+                      precision="24"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ORIG_NMB_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="114"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ORIG_NMB_DD]"
+                      name="ORIG_NMB_DD" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BILL_TAX]"
+                      dataType="numeric"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BILL_TAX]"
+                      name="BILL_TAX"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[MSISDN_DD]"
+                      name="MSISDN_DD" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      name="FCT_DT" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[RTG_DT]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[RTG_DT]"
+                      name="RTG_DT" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[CST_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[CST_KEY]"
+                      name="CST_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_RSN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SVC_USG_COMPL_RSN_KEY]"
+                      name="SVC_USG_COMPL_RSN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST VAS_PURCHASE_FACT"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[VAS_PRCH_FCT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[BILL_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_AMT"
+                      cachedPrecision="24"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[RTG_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="RTG_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[MSISDN_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="MSISDN_DD"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[MSISDN_DD]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[BGN_EV_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BGN_EV_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BGN_EV_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_DT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[BGN_EV_TM_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BGN_EV_TM_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BGN_EV_TM_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_TM_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[PEAK_TM_SEG_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PEAK_TM_SEG_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[FCT_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="FCT_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[PLAN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PLAN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PLAN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PLAN_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[PD_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PD_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PD_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PD_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[BS_LN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BS_LN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[SWTCH_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SWTCH_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SWTCH_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SWTCH_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[CCY_KEY]"
+                      cachedDataType="i4"
+                      cachedName="CCY_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CCY_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CCY_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[SVC_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[BILL_TAX]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_TAX"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_TAX]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_TAX]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[SVC_USG_COMPL_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_USG_COMPL_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[STAGE_AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="STAGE_AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[AR_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AR_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Match Output].Columns[AR_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[CST_KEY]"
+                      cachedDataType="i4"
+                      cachedName="CST_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CST_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CST_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[UNQ_CD_SRC_STM1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM1"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[UNQ_CD_SRC_STM2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM2"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[NMB_USG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="NMB_USG"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_USG]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[NMB_USG]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[ORIG_NMB_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="114"
+                      cachedName="ORIG_NMB_DD"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[ORIG_NBR_DD]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[ORIG_NMB_DD]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].Columns[SVC_USG_COMPL_RSN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_USG_COMPL_RSN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_RSN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_RSN_KEY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BGN_EV_DT_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BGN_EV_TM_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_TM_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SWTCH_KEY]"
+                      dataType="i4"
+                      name="SWTCH_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BTS_KEY]"
+                      dataType="i4"
+                      name="BTS_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SCTR_KEY]"
+                      dataType="i4"
+                      name="SCTR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CMPAGN_KEY]"
+                      dataType="i4"
+                      name="CMPAGN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CTR_BILL_CYC_KEY]"
+                      dataType="i4"
+                      name="CTR_BILL_CYC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[HM_SVC_PVDR_KEY]"
+                      dataType="i4"
+                      name="HM_SVC_PVDR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      name="PEAK_TM_SEG_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PLAN_KEY]"
+                      dataType="i4"
+                      name="PLAN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_AVY_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_AVY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_USG_COMPL_RSN_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_RSN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SVC_KEY]"
+                      dataType="i4"
+                      name="SVC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PD_KEY]"
+                      dataType="i4"
+                      name="PD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CCY_KEY]"
+                      dataType="i4"
+                      name="CCY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[ACS_CNL_KEY]"
+                      dataType="i4"
+                      name="ACS_CNL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[INV_PRD_KEY]"
+                      dataType="i4"
+                      name="INV_PRD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[NBR_USG]"
+                      dataType="numeric"
+                      name="NBR_USG"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_AMT]"
+                      dataType="numeric"
+                      name="BILL_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_TAX]"
+                      dataType="numeric"
+                      name="BILL_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_AMT]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_0_W_IDR_REV_TAX]"
+                      dataType="numeric"
+                      name="BILL_0_W_IDR_REV_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRCH_OBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="PRCH_OBS" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRCH_ALT_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRCH_ALT_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[ORIG_NBR_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ORIG_NBR_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TMT_NBR_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TMT_NBR_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MSISDN_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[RTG_DT]"
+                      dataType="dbDate"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      dataType="i4"
+                      name="AR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CST_KEY]"
+                      dataType="i4"
+                      name="CST_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="support@pragmaticworks.com;http://www.pragmaticworks.com"
+              description="The Delete Batch transform takes input data and runs batch deletes against the selected table."
+              name="TF Delete Batch VAS_PRCH_FACT_Error"
+              usesDispositions="true"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DESTINATION_CONNECTION_MANAGER">ADO_DimensionalModel</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DESTINATION_TABLE_NAME">dbo.VAS_PRCH_FACT_Error</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="COMMAND_TIMEOUT">60</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="TURN_OFF_INTERNAL_TRANSACTION">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">PW.TaskFactory.DeleteBatchTransform</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="DebugMode">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Connections[DestinationConnection]"
+                  connectionManagerID="{D03B6D8D-0B85-4C60-998C-619208AA8A7C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ADO_DimensionalModel]"
+                  description="Connection for the destination"
+                  name="DestinationConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input]"
+                  errorOrTruncationOperation="Error or Truncation"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[BGN_EV_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BGN_EV_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BGN_EV_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_DT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BGN_EV_DT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[BGN_EV_TM_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BGN_EV_TM_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BGN_EV_TM_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BGN_EV_TM_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BGN_EV_TM_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[STAGE_AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="STAGE_AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">STAGE_AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SRC_OBJ_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[SWTCH_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SWTCH_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SWTCH_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SWTCH_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SWTCH_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[FCT_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="FCT_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">FCT_DT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[PEAK_TM_SEG_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PEAK_TM_SEG_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PEAK_TM_SEG_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">PEAK_TM_SEG_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[PLAN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PLAN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PLAN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PLAN_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">PLAN_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[SVC_USG_COMPL_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_USG_COMPL_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_USG_COMPL_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_USG_COMPL_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[SVC_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SVC_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SVC_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[SVC_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[PD_KEY]"
+                      cachedDataType="i4"
+                      cachedName="PD_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PD_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[PD_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">PD_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[CCY_KEY]"
+                      cachedDataType="i4"
+                      cachedName="CCY_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[CCY_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CCY_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">CCY_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[BS_LN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BS_LN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BS_LN_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[BILL_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_AMT"
+                      cachedPrecision="24"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BILL_AMT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_AMT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BILL_AMT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[BILL_TAX]"
+                      cachedDataType="numeric"
+                      cachedName="BILL_TAX"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BILL_TAX]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[BILL_TAX]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BILL_TAX</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[MSISDN_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="MSISDN_DD"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[MSISDN_DD]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[MSISDN_DD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">MSISDN_DD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">FCT_DT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[RTG_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="RTG_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">RTG_DT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[CST_KEY]"
+                      cachedDataType="i4"
+                      cachedName="CST_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[CST_KEY]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[CST_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">CST_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[UNQ_CD_SRC_STM1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM1"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM1</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[UNQ_CD_SRC_STM2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM2"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM2</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[NMB_USG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="NMB_USG"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[NMB_USG]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[NMB_USG]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">NMB_USG</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].Columns[ORIG_NMB_DD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="114"
+                      cachedName="ORIG_NMB_DD"
+                      externalMetadataColumnId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[ORIG_NMB_DD]"
+                      lineageId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output].Columns[ORIG_NMB_DD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">ORIG_NMB_DD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BGN_EV_DT_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BGN_EV_TM_KEY]"
+                      dataType="i4"
+                      name="BGN_EV_TM_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SWTCH_KEY]"
+                      dataType="i4"
+                      name="SWTCH_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PEAK_TM_SEG_KEY]"
+                      dataType="i4"
+                      name="PEAK_TM_SEG_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PLAN_KEY]"
+                      dataType="i4"
+                      name="PLAN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SVC_USG_COMPL_KEY]"
+                      dataType="i4"
+                      name="SVC_USG_COMPL_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[SVC_KEY]"
+                      dataType="i4"
+                      name="SVC_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[PD_KEY]"
+                      dataType="i4"
+                      name="PD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[CCY_KEY]"
+                      dataType="i4"
+                      name="CCY_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BILL_AMT]"
+                      dataType="numeric"
+                      name="BILL_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[BILL_TAX]"
+                      dataType="numeric"
+                      name="BILL_TAX"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[MSISDN_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MSISDN_DD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[RTG_DT]"
+                      dataType="dbDate"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[CST_KEY]"
+                      dataType="i4"
+                      name="CST_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[NMB_USG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="NMB_USG" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input].ExternalColumns[ORIG_NMB_DD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="114"
+                      name="ORIG_NMB_DD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Outputs[Output]"
+                  exclusionGroup="1"
+                  name="Output"
+                  synchronousInputId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT LOAD VAS_PRCH_FCT.Paths[Lookup Match Output]"
+              endId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Inputs[Multicast Input 1]"
+              name="Lookup Match Output"
+              startId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT LOAD VAS_PRCH_FCT.Paths[Multicast Output 1]"
+              endId="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DFT LOAD VAS_PRCH_FCT.Paths[Multicast Output 2]"
+              endId="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error.Inputs[Input]"
+              name="Multicast Output 2"
+              startId="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DFT LOAD VAS_PRCH_FCT.Paths[OLE DB Source Output]"
+              endId="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="208,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT"
+          TopLeft="187,76" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="{B69AF85C-88D4-439F-88AA-51D8A324F80E}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{9B509C5E-A5AF-408F-B9AE-B69F2C8F3645}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{272F249E-DBB2-4BB9-97F7-D6ECBD291ECF}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{13C01D07-2920-41E5-9306-5AE4AE02AC26}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{46D9D0A5-5E47-4D42-8679-2FF8A2B268D0}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{C4BEE7BA-2F9D-4AE9-8713-44D65824110F}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{3A652FD5-BE5C-407F-AECE-37D8C1F4C548}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{305D66B3-10D2-49F1-A4F3-10EC8F047AFF}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{AA0BD69A-AC2E-4432-8860-6C5E6844451F}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{1058A3D1-571D-44B8-BF9A-7BB758CA9E40}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{E7A01FCB-3315-45E5-8112-625CCB926EE2}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{C150CF2C-3BF1-4F18-AA80-42467ECC19A4}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{CF804104-402B-4B25-A2A2-772D77EC08E0}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{5946EE38-F351-4DA0-BA5B-4513C563AEBB}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{774AAF34-5E6B-40C7-8B30-70C530C4FE13}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{A493AD1B-961E-4CE2-BCC3-A88511922CE5}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{DFA61D5B-39CB-4FA8-BE36-C6C81602ED31}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{F0912AFF-0705-4622-963C-1D6198CB85FF}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{BEF000B9-178B-4352-B0E6-3A5BFFF072F8}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{D635DE10-91B2-48F5-841D-8F187D9C70F1}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{13C19364-F924-4884-86F9-C7A24C433332}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{1A0C57B3-C1C1-47DB-A472-E5557A5014C9}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{176C054B-6E6E-43EE-96F7-280B90D83AE7}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{66681A86-AC03-41E6-8DF8-9DAA349CC238}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{7EBDE0DA-5FDC-404C-A84C-C555F8C08C5E}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{6787CB31-C4F4-42C5-9BC2-CFDD2327771F}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{AD3A1A0A-DAC1-4BE7-8BE9-FB0964340932}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{CE712265-587D-457F-A889-6F79B2AC150E}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{70DB03C9-BCC9-4D19-A06D-147250CA9D36}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{BCAE6891-DFBE-4F81-B712-3389650A6233}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DFT LOAD VAS_PRCH_FCT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="269,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\MLT Matched Records"
+          TopLeft="332.5,311.5" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY"
+          TopLeft="8.50000000000006,413.5" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY"
+          TopLeft="332.5,209.5" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\TF Delete Batch VAS_PRCH_FACT_Error"
+          TopLeft="523.794860231774,469.402952682467" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT"
+          TopLeft="5.50000000000006,515.5" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error"
+          TopLeft="332.5,5.5" />
+        <NodeLayout
+          Size="257,42"
+          Id="208"
+          TopLeft="338.5,107.5" />
+        <EdgeLayout
+          Id="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY"
+          TopLeft="423.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-283.5,60"
+              Start="0,0"
+              End="-283.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2128603104213" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2128603104213"
+                    Point2="0,24.2128603104213"
+                    Point3="-4,24.2128603104213" />
+                  <mssgle:LineSegment
+                    End="-279.5,24.2128603104213" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-279.5,24.2128603104213"
+                    Point2="-283.5,24.2128603104213"
+                    Point3="-283.5,28.2128603104213" />
+                  <mssgle:LineSegment
+                    End="-283.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT LOAD VAS_PRCH_FCT.Paths[Multicast Output 2]"
+          TopLeft="510.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.794860231774,115.902952682467"
+              Start="0,0"
+              End="147.794860231774,108.402952682467">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7723667144325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7723667144325"
+                    Point2="0,46.7723667144325"
+                    Point3="4,46.7723667144325" />
+                  <mssgle:LineSegment
+                    End="143.794860231774,46.7723667144325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.794860231774,46.7723667144325"
+                    Point2="147.794860231774,46.7723667144325"
+                    Point3="147.794860231774,50.7723667144325" />
+                  <mssgle:LineSegment
+                    End="147.794860231774,108.402952682467" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT LOAD VAS_PRCH_FCT.Paths[Lookup Match Output]"
+          TopLeft="467,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="5"
+          TopLeft="140,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="4"
+          TopLeft="467,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="344"
+          TopLeft="467,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VAS_PRCH_FCT\LKP ARRANGEMENT KEY">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VAS_PRCH_FCT\OLE_DST VAS_PURCHASE_FACT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VAS_PRCH_FCT\OLE _SRC VAS_PRCH_FCT_Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

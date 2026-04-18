@@ -1,0 +1,2053 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/30/2013 8:06:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\Pearson.Mitchell"
+  DTS:DTSID="{84B65727-5D64-427D-B113-7FA0AC25E673}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Analytics_VOICE_SVC_DTL_FCT_Error"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{7FACCAA7-CFFF-4207-9F66-84B933396A49}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{4B6E78B8-A503-4047-BB41-7313805BF95F}"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT LOAD VOICE_SVC_DTL_FCT"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4577FCDE-C525-4A0D-81BF-BD7E5BFFAD04}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT LOAD VOICE_SVC_DTL_FCT"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferMaxRows">@[$Project::DefaultBufferMaxRows]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="DefaultBufferSize">@[$Project::DefaultBufferSize]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferMaxRows="50000"
+          defaultBufferSize="26214400"
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP Arrangement Key"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [AR_KEY]
+      , UNQ_CD_SRC_STM FROM [dbo].[AR_DIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT [AR_KEY]
+      , UNQ_CD_SRC_STM FROM [dbo].[AR_DIM]) [refTable]
+where [refTable].[UNQ_CD_SRC_STM] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AR_KEY" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UNQ_CD_SRC_STM" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AR_KEY_LKP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input].Columns[AR_KEY_LKP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AR_KEY_LKP"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AR_KEY_LKP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">UNQ_CD_SRC_STM</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Match Output].Columns[AR_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Match Output].Columns[AR_KEY]"
+                      name="AR_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">AR_KEY</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT Matched Records">
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST VOICE_SVC_DTL_FACT"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[VOICE_SVC_DTL_FCT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[RTG_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="RTG_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[FCT_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="FCT_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[AR_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AR_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Match Output].Columns[AR_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[WLLT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="WLLT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[WLLT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[WLLT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[TAX_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="TAX_AMT"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TAX_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[TAX_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[new_bal]"
+                      cachedDataType="numeric"
+                      cachedName="new_bal"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[NEW_BAL]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[new_bal]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[USG_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="USG_AMT"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[USG_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[USG_AMT]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[STAGE_AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="STAGE_AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[UNQ_CD_SRC_STM1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM1"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[UNQ_CD_SRC_STM2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM2"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[UNQ_CD_SRC_STM3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="UNQ_CD_SRC_STM3"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM3]" />
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].Columns[BS_LN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BS_LN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[WLLT_KEY]"
+                      dataType="i4"
+                      name="WLLT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AR_KEY]"
+                      dataType="i4"
+                      name="AR_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[USG_AMT]"
+                      dataType="numeric"
+                      name="USG_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TAX_AMT]"
+                      dataType="numeric"
+                      name="TAX_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[NEW_BAL]"
+                      dataType="numeric"
+                      name="NEW_BAL"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[RTG_DT]"
+                      dataType="dbDate"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC VOICE_SVC_DTL_FCT_Error"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[etl].[VOICE_SVC_DTL_FCT_Error]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC etl.VOICE_SVC_DTL_FCT_ERROR</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Connections[OleDbConnection]"
+                  connectionManagerID="{13F4484A-E5D7-4BB9-B084-A2698F57C334}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_DimensionalModel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]"
+                      name="FCT_DT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[WLLT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[WLLT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[WLLT_KEY]"
+                      name="WLLT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AR_KEY_LKP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AR_KEY_LKP]"
+                      length="50"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AR_KEY_LKP]"
+                      name="AR_KEY_LKP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]"
+                      name="AUDT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]"
+                      name="STAGE_AUDT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[USG_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[USG_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[USG_AMT]"
+                      name="USG_AMT"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[TAX_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[TAX_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[TAX_AMT]"
+                      name="TAX_AMT"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]"
+                      name="FCT_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]"
+                      name="RTG_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      length="50"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]"
+                      name="UNQ_CD_SRC_STM1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      length="50"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]"
+                      name="UNQ_CD_SRC_STM2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      length="2"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM3]"
+                      name="UNQ_CD_SRC_STM3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[new_bal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[new_bal]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[new_bal]"
+                      name="new_bal"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[WLLT_KEY]"
+                      dataType="i4"
+                      name="WLLT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AR_KEY_LKP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="AR_KEY_LKP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[USG_AMT]"
+                      dataType="numeric"
+                      name="USG_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[TAX_AMT]"
+                      dataType="numeric"
+                      name="TAX_AMT"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[RTG_DT]"
+                      dataType="dbTimeStamp"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="UNQ_CD_SRC_STM3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[new_bal]"
+                      dataType="numeric"
+                      name="new_bal"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT_KEY]"
+                      name="FCT_DT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM1]"
+                      name="UNQ_CD_SRC_STM1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM2]"
+                      name="UNQ_CD_SRC_STM2" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[UNQ_CD_SRC_STM3]"
+                      name="UNQ_CD_SRC_STM3" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[WLLT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[WLLT_KEY]"
+                      name="WLLT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AR_KEY_LKP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AR_KEY_LKP]"
+                      name="AR_KEY_LKP" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AUDT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[AUDT_KEY]"
+                      name="AUDT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDT_KEY]"
+                      name="STAGE_AUDT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[new_bal]"
+                      dataType="numeric"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[new_bal]"
+                      name="new_bal"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[USG_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[USG_AMT]"
+                      name="USG_AMT"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[BS_LN_KEY]"
+                      name="BS_LN_KEY" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[TAX_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[TAX_AMT]"
+                      name="TAX_AMT"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[FCT_DT]"
+                      name="FCT_DT" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[RTG_DT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[RTG_DT]"
+                      name="RTG_DT" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="support@pragmaticworks.com;http://www.pragmaticworks.com"
+              description="The Delete Batch transform takes input data and runs batch deletes against the selected table."
+              name="TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error"
+              usesDispositions="true"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DESTINATION_CONNECTION_MANAGER">ADO_DimensionalModel</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DESTINATION_TABLE_NAME">dbo.VOICE_SVC_DTL_FACT_Error</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="COMMAND_TIMEOUT">60</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="TURN_OFF_INTERNAL_TRANSACTION">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">PW.TaskFactory.DeleteBatchTransform</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="DebugMode">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Connections[DestinationConnection]"
+                  connectionManagerID="{D03B6D8D-0B85-4C60-998C-619208AA8A7C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ADO_DimensionalModel]"
+                  description="Connection for the destination"
+                  name="DestinationConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input]"
+                  errorOrTruncationOperation="Error or Truncation"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[FCT_DT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="FCT_DT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[FCT_DT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">FCT_DT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[WLLT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="WLLT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[WLLT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[WLLT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">WLLT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[AR_KEY_LKP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AR_KEY_LKP"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[AR_KEY_LKP]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AR_KEY_LKP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">AR_KEY_LKP</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[AUDT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[STAGE_AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="STAGE_AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[STAGE_AUDT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">STAGE_AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[SRC_OBJ_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SRC_OBJ_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[USG_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="USG_AMT"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[USG_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[USG_AMT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">USG_AMT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[TAX_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="TAX_AMT"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[TAX_AMT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[TAX_AMT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">TAX_AMT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[new_bal]"
+                      cachedDataType="numeric"
+                      cachedName="new_bal"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[new_bal]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[new_bal]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">new_bal</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[FCT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="FCT_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[FCT_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[FCT_DT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">FCT_DT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[RTG_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="RTG_DT"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[RTG_DT]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[RTG_DT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">RTG_DT</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[UNQ_CD_SRC_STM1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM1"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM1]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM1</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[UNQ_CD_SRC_STM2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM2"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM2]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM2</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[UNQ_CD_SRC_STM3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="UNQ_CD_SRC_STM3"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[UNQ_CD_SRC_STM3]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].Columns[BS_LN_KEY]"
+                      cachedDataType="i4"
+                      cachedName="BS_LN_KEY"
+                      externalMetadataColumnId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[BS_LN_KEY]"
+                      lineageId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output].Columns[BS_LN_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">BS_LN_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[FCT_DT_KEY]"
+                      dataType="i4"
+                      name="FCT_DT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[WLLT_KEY]"
+                      dataType="i4"
+                      name="WLLT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[AR_KEY_LKP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AR_KEY_LKP" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[USG_AMT]"
+                      dataType="numeric"
+                      name="USG_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[TAX_AMT]"
+                      dataType="numeric"
+                      name="TAX_AMT"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[FCT_DT]"
+                      dataType="dbDate"
+                      name="FCT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[RTG_DT]"
+                      dataType="dbDate"
+                      name="RTG_DT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="UNQ_CD_SRC_STM3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[new_bal]"
+                      dataType="numeric"
+                      name="new_bal"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input].ExternalColumns[BS_LN_KEY]"
+                      dataType="i4"
+                      name="BS_LN_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Outputs[Output]"
+                  exclusionGroup="1"
+                  name="Output"
+                  synchronousInputId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[Lookup Match Output]"
+              endId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Inputs[Multicast Input 1]"
+              name="Lookup Match Output"
+              startId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[Multicast Output 1]"
+              endId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[Multicast Output 2]"
+              endId="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Inputs[Input]"
+              name="Multicast Output 2"
+              startId="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[OLE DB Source Output]"
+              endId="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="237,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT"
+          TopLeft="203,63" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="{CDC661F0-8B37-4044-8BED-8C62AE9D8CDE}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{12419287-B18B-47B0-919C-ACF1D1EFCAC1}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{A082D5BE-9B79-48A8-AE93-8A921BDC1C3E}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{C3F02877-5FB4-4D51-8549-88FC8FBDD0C3}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{4DDCBBA8-9F40-4FE7-8FA6-7005DD7C62F4}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{5DF1AADF-E51D-46E6-AD0D-B0924AA80498}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{AAFCA593-5798-4D74-B10C-A1F3EA5EA0DB}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{BD0522D9-A9B0-45A7-BA0B-FAB74BFD6B58}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{CF18B176-F50E-4E01-B3E8-9A33BA881EEE}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{1EAE1812-4223-48CF-A99A-52C77195EA83}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{29C0D65D-90B4-4D3E-B3A5-7AD5E9813047}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{8D270F25-A85D-446B-8BE1-CDA552D4E1F1}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{C53C5DE1-0C43-444D-BFC4-F3F0C1E8273E}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{1809D5F6-CB1B-4206-84E4-6D2756CAE5FF}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{58D61C4F-259C-49A7-BEF2-62BC3EB39F64}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{5DB5F41A-E0BC-420B-A915-C9167B27A23F}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{92D00AF6-AAF5-480E-AD8F-5E4FD9EAEE77}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{CFFAABC5-29A6-4577-A769-823912624E89}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{5ED88EE8-D9AB-4AA2-B1DE-0D7A78E5DDF2}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{17CC7E31-C4EA-4322-AC37-0F1191A2D03B}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{BAD50C1D-3E2C-409A-9A50-6AA2E8DC20E5}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{D07923C8-9349-40F0-BE2C-E0B97146C04A}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{11A22F54-7892-40FE-A697-506A4439237E}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{F8E1E56C-A47F-43D8-BFC6-E5D940750F6A}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DFT LOAD VOICE_SVC_DTL_FCT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="343,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error"
+          TopLeft="371.5,5.5" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\MLT Matched Records"
+          TopLeft="371.5,311.5" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key"
+          TopLeft="43.5000000000001,413.5" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error"
+          TopLeft="371.5,413.5" />
+        <NodeLayout
+          Size="283,42"
+          Id="143"
+          TopLeft="401.5,107.5" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key"
+          TopLeft="371.5,209.5" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT"
+          TopLeft="5.50000000000006,515.5" />
+        <EdgeLayout
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT\TF Delete Batch Transform VOICE_SVC_DTL_FCT_Error.Connections[DestinationConnection]"
+          TopLeft="543,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="235"
+          TopLeft="177,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="143"
+          TopLeft="543,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="235"
+          TopLeft="487.166666666667,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-310.166666666667,60"
+              Start="0,0"
+              End="-310.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1671503192107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1671503192107"
+                    Point2="0,24.1671503192107"
+                    Point3="-4,24.1671503192107" />
+                  <mssgle:LineSegment
+                    End="-306.166666666667,24.1671503192107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-306.166666666667,24.1671503192107"
+                    Point2="-310.166666666667,24.1671503192107"
+                    Point3="-310.166666666667,28.1671503192107" />
+                  <mssgle:LineSegment
+                    End="-310.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[Multicast Output 2]"
+          TopLeft="598.833333333333,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.8333333333333,60"
+              Start="0,0"
+              End="-55.8333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1671503192107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1671503192107"
+                    Point2="0,24.1671503192107"
+                    Point3="-4,24.1671503192107" />
+                  <mssgle:LineSegment
+                    End="-51.8333333333333,24.1671503192107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.8333333333333,24.1671503192107"
+                    Point2="-55.8333333333333,24.1671503192107"
+                    Point3="-55.8333333333333,28.1671503192107" />
+                  <mssgle:LineSegment
+                    End="-55.8333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT LOAD VOICE_SVC_DTL_FCT.Paths[Lookup Match Output]"
+          TopLeft="543,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_SRC VOICE_SVC_DTL_FCT_Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VOICE_SVC_DTL_FCT\LKP Arrangement Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT LOAD VOICE_SVC_DTL_FCT\OLE_DST VOICE_SVC_DTL_FACT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

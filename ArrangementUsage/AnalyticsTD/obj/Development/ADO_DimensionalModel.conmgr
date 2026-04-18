@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO_DimensionalModel"
+  DTS:DTSID="{D03B6D8D-0B85-4C60-998C-619208AA8A7C}"
+  DTS:CreationName="ADO.NET:SQL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SrvBI02;Initial Catalog=AnalyticsTD;Integrated Security=True;Application Name=SSIS-Analytics_BTS_DIM-{D03B6D8D-0B85-4C60-998C-619208AA8A7C}10.1.5.172\ANALYTICS.AnalyticsGH1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,1803 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/6/2013 1:51:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MICGHBIODSSVR"
+  DTS:CreatorName="MICGH\Pearson.Mitchell"
+  DTS:DTSID="{F314E2D7-436E-42A1-8FB3-8ECF8E478A49}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Analytics_INOPAC_SVC_DIM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{9FC8D41A-052F-41A9-A686-F1847D0F41F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{BDCA7886-6972-49B5-995A-228BAF7F7FF7}"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">745</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B7E12A1E-C645-4BDD-BA8C-A757A63F3971}"
+      DTS:ObjectName="SRC_OBJ_NM">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">INOPAC</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{11CC3D10-CBDF-4B4E-9B32-797115CC7301}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LogID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63E5C4B1-2BE1-4F23-8F9E-D13682281CC3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SRC_OBJ_KEY">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,22,PipelineInitialization,18,OnPipelineRowsSent,24,OnPipelinePrePrimeOutput,25,OnPipelinePostPrimeOutput,24,OnPipelinePreEndOfRowset,25,OnPipelinePostEndOfRowset</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="PipelineInitialization"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT SVC_DIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E16207B3-23E6-4BA5-AFB4-11EFE4318D37}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT SVC_DIM">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT SVC_DIM\DER Audit Key"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER Audit Key"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input].Columns[CONTROL_MD5]"
+                      cachedDataType="bytes"
+                      cachedLength="20"
+                      cachedName="CONTROL_MD5"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CONTROL_MD5]" />
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input].Columns[SRC_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="48"
+                      cachedName="SRC_ID"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SRC_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[AUDT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[AUDT_KEY]"
+                      name="AUDT_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::LogID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::LogID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[SRC_OBJ_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[SRC_OBJ_KEY]"
+                      name="SRC_OBJ_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::SRC_OBJ_KEY]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::SRC_OBJ_KEY]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[UNQ_CD_SRC_STM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[UNQ_CD_SRC_STM]"
+                      name="UNQ_CD_SRC_STM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SRC_ID]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)SRC_ID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[dcControl_MD5]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[dcControl_MD5]"
+                      name="dcControl_MD5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)#{Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CONTROL_MD5]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)CONTROL_MD5</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT SVC_DIM\OLE_SRC SVC"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC SVC"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC dbo.INOPAC_SVC_Source</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Query_OLE_SRC_SCTR</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT SVC_DIM\OLE_SRC SVC.Connections[OleDbConnection]"
+                  connectionManagerID="{A84AB66E-6528-4D48-87F1-17440CAC4DC4}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDB_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[ETLBatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[ETLBatchID]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[ETLBatchID]"
+                      name="ETLBatchID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[STAGE_AUDIT_KEY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDIT_KEY]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[STAGE_AUDIT_KEY]"
+                      name="STAGE_AUDIT_KEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CONTROL_MD5]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_MD5]"
+                      length="20"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CONTROL_MD5]"
+                      name="CONTROL_MD5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[rownbr]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[rownbr]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[rownbr]"
+                      name="rownbr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SRC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SRC_ID]"
+                      length="48"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SRC_ID]"
+                      name="SRC_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_NM]"
+                      length="200"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_NM]"
+                      name="SVC_NM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_CD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[OPR_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_CD]"
+                      name="OPR_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[OPR_NM]"
+                      length="100"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_NM]"
+                      name="OPR_NM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CGY_CD]"
+                      length="13"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_CD]"
+                      name="CGY_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CGY_NM]"
+                      length="13"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_NM]"
+                      name="CGY_NM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_TP_CD]"
+                      length="50"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_CD]"
+                      name="SVC_TP_CD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_TP_NM]"
+                      length="200"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_NM]"
+                      name="SVC_TP_NM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_ALT_CD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_ALT_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_ALT_CD]"
+                      name="SVC_ALT_CD"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[ETLBatchID]"
+                      dataType="i4"
+                      name="ETLBatchID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[STAGE_AUDIT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDIT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_MD5]"
+                      dataType="bytes"
+                      length="20"
+                      name="CONTROL_MD5" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[rownbr]"
+                      dataType="i8"
+                      name="rownbr" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SRC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="SRC_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="SVC_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[OPR_CD]"
+                      dataType="i4"
+                      name="OPR_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[OPR_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="OPR_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CGY_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="CGY_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[CGY_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="CGY_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_TP_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SVC_TP_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_TP_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="SVC_TP_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].ExternalColumns[SVC_ALT_CD]"
+                      dataType="i4"
+                      name="SVC_ALT_CD" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ETLBatchID]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ETLBatchID]"
+                      name="ETLBatchID" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDIT_KEY]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[STAGE_AUDIT_KEY]"
+                      name="STAGE_AUDIT_KEY" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SRC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SRC_ID]"
+                      name="SRC_ID" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_NM]"
+                      name="SVC_NM" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[OPR_CD]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[OPR_CD]"
+                      name="OPR_CD" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[OPR_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[OPR_NM]"
+                      name="OPR_NM" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CGY_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CGY_CD]"
+                      name="CGY_CD" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CGY_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CGY_NM]"
+                      name="CGY_NM" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_TP_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_TP_CD]"
+                      name="SVC_TP_CD" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_TP_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_TP_NM]"
+                      name="SVC_TP_NM" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_ALT_CD]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[SVC_ALT_CD]"
+                      name="SVC_ALT_CD" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CONTROL_MD5]"
+                      dataType="bytes"
+                      length="20"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[CONTROL_MD5]"
+                      name="CONTROL_MD5" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[rownbr]"
+                      dataType="i8"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[rownbr]"
+                      name="rownbr" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Upsert Destinaton; Pragmatic Works, Inc; Task Factory (c) 2009 - 2012 Pragmatic Works, Inc; http://www.pragmaticworks.com;support@pragmaticworks.com"
+              description="The Upsert Destination takes input data coming from the pipeline and then conditionally inserts, updates or deletes data from the destination."
+              name="TF Upsert SVC_DIM"
+              usesDispositions="true"
+              version="14">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DESTINATION_TABLE_NAME">dbo.SVC_DIM</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="ENABLE_IDENTITY_INSERT">false</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="INSERT_ROWS_COUNT_VARIABLE">&lt;Select Variable&gt;</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="UPDATE_ROWS_COUNT_VARIABLE">&lt;Select Variable&gt;</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="COMMAND_TIMEOUT">0</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="UPDATE_METHOD"
+                  typeConverter="PW.TaskFactory.Enums+UpsertUpdateMethod">1</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="ACTION_UPDATE">true</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="ACTION_INSERT">true</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="POST_UPDATE_COLUMN"></property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="TURN_OFF_INTERNAL_TRANSACTION">false</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="ROW_FLAG_COLUMN"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="ROW_FLAG_COLUMN_INSERT_VALUE"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="ROW_FLAG_COLUMN_DELETE_VALUE"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="ROW_FLAG_COLUMN_REJECT_VALUE"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="ROW_FLAG_COLUMN_UPDATE_VALUE"></property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="PW.TaskFactory.Enums+UpsertAccessModeEnum">0</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="UPSERT_METHOD"
+                  typeConverter="PW.TaskFactory.Enums+UpsertMethod">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">PW.TaskFactory.UpsertDestination</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates the Upsert destination will use a custom definition for it's temp table creation"
+                  expressionType="Notify"
+                  name="Use Custom Temp Table">false</property>
+                <property
+                  dataType="System.String"
+                  description="Definition of the custom temp table script"
+                  expressionType="Notify"
+                  name="Custom Temp Table Definition"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Use a merge statement for the insert and updates instead of two seperate insert and update statements"
+                  expressionType="Notify"
+                  name="Use Merge Statement">false</property>
+                <property
+                  dataType="System.String"
+                  description="The script to run before each buffer is sent to the destination"
+                  expressionType="Notify"
+                  name="Before Script"></property>
+                <property
+                  dataType="System.String"
+                  description="The script to run after each buffer is sent to the destination"
+                  expressionType="Notify"
+                  name="After Script"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set to true if you want the component to fail if the before script throws an exception."
+                  expressionType="Notify"
+                  name="Fail Component If Before Script Throws Exception">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set to true if you want the component to fail if the after script throws an exception."
+                  expressionType="Notify"
+                  name="Fail Component If After Script Throws Exception">false</property>
+                <property
+                  dataType="System.String"
+                  description="Allows you to set a table hint for the destination table (e.g. NOLOCK - SNAPSHOT)."
+                  expressionType="Notify"
+                  name="Table Hint"></property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="DebugMode">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Connections[DestinationConnection]"
+                  connectionManagerID="{D03B6D8D-0B85-4C60-998C-619208AA8A7C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ADO_DimensionalModel]"
+                  description="Connection for the destination"
+                  name="DestinationConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input]"
+                  errorOrTruncationOperation="Error or Truncation"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[STAGE_AUDIT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="STAGE_AUDIT_KEY"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[STAGE_AUDIT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">STAGE_AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[AUDT_KEY]"
+                      cachedDataType="i4"
+                      cachedName="AUDT_KEY"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[AUDT_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">AUDT_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[SRC_OBJ_KEY]"
+                      cachedDataType="i4"
+                      cachedName="SRC_OBJ_KEY"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[SRC_OBJ_KEY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SRC_OBJ_KEY</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[UNQ_CD_SRC_STM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UNQ_CD_SRC_STM"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM]"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[UNQ_CD_SRC_STM]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">UNQ_CD_SRC_STM</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[dcControl_MD5]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="dcControl_MD5"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CONTROL_MD5]"
+                      lineageId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output].Columns[dcControl_MD5]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">CONTROL_MD5</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[CONTROL_MD5]"
+                      cachedDataType="bytes"
+                      cachedLength="20"
+                      cachedName="CONTROL_MD5"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CONTROL_MD5]" />
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[SVC_NM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="SVC_NM"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_NM]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_NM]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_NM</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[OPR_CD]"
+                      cachedDataType="i4"
+                      cachedName="OPR_CD"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[OPR_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_CD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">OPR_CD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[OPR_NM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="OPR_NM"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[OPR_NM]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[OPR_NM]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">OPR_NM</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[CGY_CD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="CGY_CD"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CGY_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_CD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">CGY_CD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[CGY_NM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="CGY_NM"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CGY_NM]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[CGY_NM]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">CGY_NM</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[SVC_TP_CD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SVC_TP_CD"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_TP_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_CD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_TP_CD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[SVC_TP_NM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="SVC_TP_NM"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_TP_NM]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_TP_NM]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_TP_NM</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].Columns[SVC_ALT_CD]"
+                      cachedDataType="i4"
+                      cachedName="SVC_ALT_CD"
+                      externalMetadataColumnId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_ALT_CD]"
+                      lineageId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output].Columns[SVC_ALT_CD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Mapped Column for Destination"
+                          name="DestinationColumn">SVC_ALT_CD</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column A Key Column"
+                          name="IsKeyColumn">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Is Column An Identity Column"
+                          name="IsIdentityColumn">false</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[STAGE_AUDT_KEY]"
+                      dataType="i4"
+                      name="STAGE_AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[AUDT_KEY]"
+                      dataType="i4"
+                      name="AUDT_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SRC_OBJ_KEY]"
+                      dataType="i8"
+                      name="SRC_OBJ_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[UNQ_CD_SRC_STM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNQ_CD_SRC_STM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CONTROL_MD5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTROL_MD5" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="SVC_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[OPR_CD]"
+                      dataType="i4"
+                      name="OPR_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[OPR_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="OPR_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CGY_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CGY_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[CGY_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="CGY_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_TP_CD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="SVC_TP_CD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_TP_NM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="SVC_TP_NM" />
+                    <externalMetadataColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input].ExternalColumns[SVC_ALT_CD]"
+                      dataType="i4"
+                      name="SVC_ALT_CD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      length="1024"
+                      lineageId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Outputs[Error Output].Columns[ErrorDescription]"
+                      name="ErrorDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT SVC_DIM.Paths[Derived Column Output]"
+              endId="Package\DFT SVC_DIM\TF Upsert SVC_DIM.Inputs[Input]"
+              name="Derived Column Output"
+              startId="Package\DFT SVC_DIM\DER Audit Key.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT SVC_DIM.Paths[OLE DB Source Output]"
+              endId="Package\DFT SVC_DIM\DER Audit Key.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT SVC_DIM\OLE_SRC SVC.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Get LogID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7F5FBE45-5558-45E3-A56C-0FA544B9928A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Get LogID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3611220-B52B-4CFD-93D2-B5519D55FB32}"
+          SQLTask:SqlStatementSource="EXEC dbo.PackageExecutionLog_GetLogID ?, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::LogID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Get SRC_OBJ_KEY"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{021549FF-20F2-46C9-AFBE-C73233ED0432}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Get SRC_OBJ_KEY"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{13F4484A-E5D7-4BB9-B084-A2698F57C334}"
+          SQLTask:SqlStatementSource="EXEC etl.SRC_OBJ_DIM_Lookup ?, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::SRC_OBJ_NM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::SRC_OBJ_KEY"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{16D64EA0-3FF7-43AC-88F6-436B92032989}"
+      DTS:From="Package\SQL Get SRC_OBJ_KEY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Get LogID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FD1752C-D668-42CB-BE2C-81039E57A185}"
+      DTS:From="Package\SQL Get LogID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DFT SVC_DIM" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT SVC_DIM"
+          TopLeft="77.6145576768773,302.187926310593" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\SQL Get LogID"
+          TopLeft="77.6145576768773,209.5" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\SQL Get SRC_OBJ_KEY"
+          TopLeft="77.6145576768773,105.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="183.114557676877,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="183.114557676877,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.687926310593"
+              Start="0,0"
+              End="0,43.187926310593">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.187926310593" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="{C9066C11-C37B-4CBD-BBA1-4655C616BD8C}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{73A931B3-1866-4D2C-839E-291E1DB9B809}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{6BEEB80E-0D26-4672-8EEE-FAD5FF26B919}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{89910DC2-EB99-4E09-88E0-5AE4A81E1CA6}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{375390E1-AB47-4C3D-BCD4-14ACC0465FB8}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{67959194-FCAE-426D-83EB-1C1CB2C010DC}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{F0DEFBAF-EFF3-4F7B-82CE-59A8621A3A79}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{5325585D-D1E6-499E-996B-08478D8C622A}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{903B529E-46F1-4012-BCA0-DFBB96DFB73E}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{E20152D1-D517-41BD-9E86-81D302470D51}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{7FCD6921-F442-4D20-AAA9-319E98B577AD}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{23EEF446-D450-4C4E-8CA4-4A973CEA45CA}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{12FC2B75-645C-43ED-9C9A-4988D98894A4}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{10A27D71-F34F-4CD2-8746-695419B0CCF3}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{53270403-5386-49E7-AAB6-9B741D2EB945}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{8FC995D7-58B0-40C2-90A2-9A0CA3502DF6}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{A35D0485-DFAB-44A5-9741-09547BD366E8}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{AC0C0FCF-740B-4502-98B2-40E7388BC39A}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="{64264E01-EDD4-4DAF-836A-C975FA882E6A}">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{D39CC26A-BA2E-41D5-BC7B-4AAE1FDE3017}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{FD6EFBC0-675A-460C-84A8-9015364EE708}"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="{75935AEE-76D7-4B0D-AA19-F8FB5047ED37}"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="{388E5D57-4E2A-4248-918C-950C48B14DB2}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="{95B4C202-CD3C-45D7-BB7D-C0103A34BE2B}"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DFT SVC_DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT SVC_DIM\TF Upsert SVC_DIM"
+          TopLeft="5.50000000000006,515.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="80"
+          TopLeft="5.50000000000006,203.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT SVC_DIM\OLE_SRC SVC"
+          TopLeft="5.50000000000006,99.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT SVC_DIM\OLE_SRC SVC"
+          TopLeft="5.50000000000006,411.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT SVC_DIM\DER Audit Key"
+          TopLeft="5.50000000000006,307.5" />
+        <EdgeLayout
+          Id="25"
+          TopLeft="107,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="24"
+          TopLeft="107,245.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT SVC_DIM.Paths[Derived Column Output]"
+          TopLeft="107,141.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT SVC_DIM\OLE_SRC SVC"
+          TopLeft="107,349.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT SVC_DIM\OLE_SRC SVC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
