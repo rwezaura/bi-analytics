@@ -1,0 +1,463 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/23/2013 9:13:20 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="MARVIN"
+  DTS:CreatorName="Marvin\Alex"
+  DTS:DTSID="{C86DF6A0-3D66-4D3D-A1A4-04644167871E}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3369.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ProcessCubeAutomaticWithReprocess_Custom"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{ADCC2ECB-6066-4C94-9263-B180B8F6BB55}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TestCube]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{03F8DD1D-7726-4540-85FC-12C4DB8EB3A6}"
+      DTS:ObjectName="TestCube">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source=" + @[$Package::ServerName]  + ";Initial Catalog=" + @[$Package::DatabaseName]  + ";Provider=MSOLAP.5;Impersonation Level=Impersonate;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.1.5.169;Initial Catalog=Analytics_Olap_Cube;Provider=MSOLAP.5;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B901B083-DC2C-4CED-994E-8635D7A549F2}"
+      DTS:ObjectName="CubeName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Analytics_GH</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{24B52475-CAAF-49CF-B813-A08648FFBF22}"
+      DTS:ObjectName="DatabaseName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Analytics_Olap_Cube</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{A23B3C2E-0FD5-444A-917F-25BCC1098AC9}"
+      DTS:ObjectName="EndDate">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">10/21/2013</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C0E60304-17BB-4368-AD46-4F47E5AA8F16}"
+      DTS:ObjectName="MaxPartitionDate">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">20141231</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{9785889C-DB9F-40DF-90B4-7245DF4FB2EE}"
+      DTS:ObjectName="MeasureGroupName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Reload</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{E9ABACBB-E7B2-4C8D-8585-BCFD1BFBB4A2}"
+      DTS:ObjectName="PPN_DT">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/5/2013</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="11"
+      DTS:DTSID="{82BD79A4-8801-426A-97CB-43FCE267BC27}"
+      DTS:ObjectName="ProcessPartitions">
+      <DTS:Property
+        DTS:DataType="11"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{A1DE8771-0D8A-43D4-8555-63F63C3925AA}"
+      DTS:ObjectName="ServerName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">10.1.5.169</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{470B5069-C39A-44C8-9732-BD46982BC829}"
+      DTS:ObjectName="StartDate">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">10/20/2013</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27FD4DED-964F-49F3-BFFF-7328D9C36EBE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CubeName">
+      <DTS:VariableValue
+        DTS:DataType="8">Analytics_GH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{68D96C1D-516D-4607-88BF-40E73F0B9844}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLBatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5A1A2F1-E512-40C5-A7FE-9BEEA58C4A8E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadDates">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B2B0751-B04B-433D-B924-05B094D4E58F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxMeasureGroupDate">
+      <DTS:VariableValue
+        DTS:DataType="3">20141231</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FFE2D359-88EA-435F-A9F5-D449F767A03D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::MaxPartitionDate]&gt;0 ? @[$Package::MaxPartitionDate] : @[User::YesterdaysDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxPartitionDate">
+      <DTS:VariableValue
+        DTS:DataType="3">20141231</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E83E4A52-B3FE-49BB-8DE7-A79AE9FF3AE2}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::MeasureGroupName]  + &quot;_&quot; +  (DT_STR, 20, 1252) @[User::MaxMeasureGroupDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PartitionName">
+      <DTS:VariableValue
+        DTS:DataType="8">Reload_20141231</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D4B9BA87-346C-4B1F-AB42-3ED6A34A0E48}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT [Server], [Database], [Cube], [MeasureGroup], [Query] FROM dbo.MeasureGroupConfig WHERE [Server] = '&quot; + @[$Package::ServerName]  + &quot;' AND [Database]='&quot; + @[$Package::DatabaseName]  + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT [Server], [Database], [Cube], [MeasureGroup], [Query] FROM dbo.MeasureGroupConfig WHERE [Server] = '10.1.5.169' AND [Database]='Analytics_Olap_Cube'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{764AE7E7-7D51-4BCC-93CC-67531A107DEA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_DATE)(SUBSTRING( ((DT_WSTR, 8)@[User::MaxMeasureGroupDate]),5,2) + &quot;/&quot; +  RIGHT( ((DT_WSTR, 8)@[User::MaxMeasureGroupDate]),2) + &quot;/&quot; + LEFT(((DT_WSTR, 8)@[User::MaxMeasureGroupDate]),4))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varMeasureGroupDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12/31/2014</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CD48410D-5D1F-4151-81E3-1E22B98B2D4A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_I4)((DT_STR,4,1252)DATEPART( &quot;yyyy&quot; , DATEADD( &quot;day&quot;, -1, getdate() )  ) +&#xA;RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;mm&quot; , DATEADD( &quot;day&quot;, -1, getdate() ) ), 2) +&#xA;RIGHT(&quot;0&quot; + (DT_STR,4,1252)DATEPART( &quot;dd&quot; , DATEADD( &quot;day&quot;, -1, getdate() ) ), 2))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="YesterdaysDate">
+      <DTS:VariableValue
+        DTS:DataType="3">20140317</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FEL Load Date"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{BB501964-3E67-452E-8E10-197E668B134D}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FEL Load Date">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:DTSID="{F6E369AF-6BD6-43F0-8387-CF429E8D3402}"
+        DTS:ObjectName="{F6E369AF-6BD6-43F0-8387-CF429E8D3402}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::LoadDates" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{8F5ECBC1-4A0B-4BB2-8CE8-AE64BE7EAC69}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Query">
+          <DTS:VariableValue
+            DTS:DataType="8">SELECT [dbo].[FactInternetSales].[ProductKey],[dbo].[FactInternetSales].[OrderDateKey],[dbo].[FactInternetSales].[DueDateKey],[dbo].[FactInternetSales].[ShipDateKey],[dbo].[FactInternetSales].[CustomerKey],[dbo].[FactInternetSales].[PromotionKey],[dbo].[FactInternetSales].[CurrencyKey],[dbo].[FactInternetSales].[SalesTerritoryKey],[dbo].[FactInternetSales].[SalesOrderNumber],[dbo].[FactInternetSales].[SalesOrderLineNumber],[dbo].[FactInternetSales].[RevisionNumber],[dbo].[FactInternetSales].[OrderQuantity],[dbo].[FactInternetSales].[UnitPrice],[dbo].[FactInternetSales].[ExtendedAmount],[dbo].[FactInternetSales].[UnitPriceDiscountPct],[dbo].[FactInternetSales].[DiscountAmount],[dbo].[FactInternetSales].[ProductStandardCost],[dbo].[FactInternetSales].[TotalProductCost],[dbo].[FactInternetSales].[SalesAmount],[dbo].[FactInternetSales].[TaxAmt],[dbo].[FactInternetSales].[Freight],[dbo].[FactInternetSales].[CarrierTrackingNumber],[dbo].[FactInternetSales].[CustomerPONumber] FROM [dbo].[FactInternetSales] WHERE OrderDateKey=?</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FEL Load Date\EPT Cube Fact Create Partitions"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{DF8516EE-A29C-4834-8050-F25D8E00ECC0}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT Cube Fact Create Partitions"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\FEL Load Date\EPT Cube Fact Create Partitions.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{D8B69694-87C7-43CC-8295-CFB414E580CA}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{09C43089-C163-4BBD-BED6-14D1C443F4C5}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\FEL Load Date\EPT Cube Fact Create Partitions.EventHandlers[OnError]\SQL ETLBatch OnError"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{005A2BC1-59B2-4831-A42A-FC40702E3538}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="SQL ETLBatch OnError"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{4A4368D7-383C-4308-9C5A-357CEA82BA4F}"
+                      SQLTask:SqlStatementSource="EXEC dbo.ETLBatch_OnError ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::ETLBatchID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="3"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>CubeFactCreatePartitions 1.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>CubeName</ParameterName>
+                <BindedVariableOrParameterName>User::CubeName</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>DatabaseName</ParameterName>
+                <BindedVariableOrParameterName>$Project::ParamStrSSASDatabaseName</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>MaxPartitionDate</ParameterName>
+                <BindedVariableOrParameterName>User::MaxMeasureGroupDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>MeasureGroupName</ParameterName>
+                <BindedVariableOrParameterName>$Package::MeasureGroupName</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ServerName</ParameterName>
+                <BindedVariableOrParameterName>$Project::ParamStrSSASServerName</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ProcessPartitions</ParameterName>
+                <BindedVariableOrParameterName>$Package::ProcessPartitions</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{AD68DC2C-DAF0-4766-ADA1-5C1632C54E35}"
+          DTS:ObjectName="{AD68DC2C-DAF0-4766-ADA1-5C1632C54E35}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::MaxMeasureGroupDate" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL HistoricalLoadDates_Get"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6153300D-6BC1-41AA-9984-33AC6BF7D272}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL HistoricalLoadDates_Get"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9034072B-2131-41AE-97FE-1F9A611F7AF6}"
+          SQLTask:SqlStatementSource="EXEC etl.HistoricalLoadDates_Get_INT ?, ?"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LoadDates" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::StartDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Package::EndDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6462508C-463F-422F-A76E-640A46FBA04F}"
+      DTS:From="Package\SQL HistoricalLoadDates_Get"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FEL Load Date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230,42"
+          Id="Package\FEL Load Date\EPT Cube Fact Create Partitions"
+          TopLeft="26.0749000512505,42.7629794514797" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="387,168"
+          Size="387,211"
+          Id="Package\FEL Load Date"
+          TopLeft="147.195099239864,407.889224461479" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\SQL HistoricalLoadDates_Get"
+          TopLeft="227.300847924352,306.253359442841" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="338.497973582108,348.253359442841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.6358650186377"
+              Start="0,0"
+              End="0,52.1358650186377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1358650186377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[TestCube]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <DtsEventHandler
+    design-time-name="Package\FEL Load Date\EPT Cube Fact Create Partitions.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\FEL Load Date\EPT Cube Fact Create Partitions.EventHandlers[OnError]\SQL ETLBatch OnError"
+          TopLeft="205,74" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

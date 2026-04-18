@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADONET_AnalyticsAuditing"
+  DTS:DTSID="{97DAE78D-5AC1-48B1-887B-54EBA7096C95}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SrvBI01;Initial Catalog=AnalyticsAuditing;Integrated Security=True;Application Name=SSIS-TigoCubePartitionManager-{97DAE78D-5AC1-48B1-887B-54EBA7096C95}10.1.5.175.AnalyticsAuditing;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
