@@ -1,0 +1,1 @@
+﻿gci D:\SRC_DATA\WORK_FOLDER\CBS\DUMP\ -Recurse -Filter "uvc_manlog*" -File | %{ Move-Item $_.FullName D:\SRC_DATA\WORK_FOLDER\CBS\DUMP\UVC_MANLOG }

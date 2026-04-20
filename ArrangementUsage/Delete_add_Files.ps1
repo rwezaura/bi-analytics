@@ -1,0 +1,1 @@
+﻿get-childitem D:\SRC_DATA\WORK_FOLDER\CBS\DUMP\ -File -Filter "*_add_*.unl.gz" -Recurse | %{ Remove-Item $_.FullName}
