@@ -1,0 +1,376 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>Analytics GH</ID>
+        <ConnectionString>Provider=SQLOLEDB.1;Data Source=10.222.150.243;Integrated Security=SSPI;Initial Catalog=AnalyticsTZ;Packet Size=32767</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>ACS CNL DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>AGING</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Arrangement Movement Reason Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Arrangement Movement</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Arrangement Status</ID>
+      </Dimension>
+      <Dimension>
+        <ID>AR DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>BTS DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Begin Event Date Calculations</ID>
+      </Dimension>
+      <Dimension>
+        <ID>BS LN DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Business Unit</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Contract Billing Cycle</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Contract Payment Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>CCY DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Customer</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DT DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Device</ID>
+      </Dimension>
+      <Dimension>
+        <ID>End Event Date Calculations</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Fact Date Calculations</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Geography</ID>
+      </Dimension>
+      <Dimension>
+        <ID>HM SVC PVDR DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Hour</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Invoice Period</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Loan Type</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Master Usage Activity</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Network</ID>
+      </Dimension>
+      <Dimension>
+        <ID>PD PARM DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>PEAK TM SEG DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>PLN DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>PD DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Route</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sales Channel</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SCTR DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Segment</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SVC USG COMPL RSN DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SVC USG COMPL DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SVC USG AVY DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SVC DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Song</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Source Object</ID>
+      </Dimension>
+      <Dimension>
+        <ID>SWTCH DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>TM DIM</ID>
+      </Dimension>
+      <Dimension>
+        <ID>User</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Wallet</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Contract</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Network Type</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>OLAP Cube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>VOICE SVC FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>VOICE SVC FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>VAS PRCH FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>VAS PRCH FCT 1</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Voice Service Details</ID>
+            <Partitions>
+              <Partition>
+                <ID>Voice Service Details</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>PD PARM DIM</ID>
+            <Partitions>
+              <Partition>
+                <ID>PD PARM DIM</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>DATA SVC FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>DATA SVC FCT</ID>
+              </Partition>
+              <Partition>
+                <ID>DATA SVC FCT 1</ID>
+              </Partition>
+              <Partition>
+                <ID>DATA SVC FCT 1 1</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>DATA SVC DTL FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>DATA SVC DTL FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>VAS SVC DTL FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>VAS SVC DTL FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>VAS SVC FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>VAS SVC FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>RLD FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>RLD FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>RLD DTL FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>RLD DTL FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>IOP SVC FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>IOP SVC FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>AR MVMT FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>AR MVMT FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>AR SVC MO FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>AR SVC MO FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>TONE SVC FCT</ID>
+            <Partitions>
+              <Partition>
+                <ID>TONE SVC FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Join Test</ID>
+            <Partitions>
+              <Partition>
+                <ID>Join Test</ID>
+              </Partition>
+              <Partition>
+                <ID>Master Service Aggregate</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Join Test 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>Master Service Aggregate</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Arrangement Movement</ID>
+            <Partitions>
+              <Partition>
+                <ID>AR MVMT FCT</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Loan Service</ID>
+            <Partitions>
+              <Partition>
+                <ID>Loan Service</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Loan Service Detail</ID>
+            <Partitions>
+              <Partition>
+                <ID>Loan Service Detail</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>VAS Purchase Detail</ID>
+            <Partitions>
+              <Partition>
+                <ID>VAS Purchase Detail</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Arrangement Tracking</ID>
+            <Partitions>
+              <Partition>
+                <ID>Arrangement Tracking</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Arrangement Service</ID>
+            <Partitions>
+              <Partition>
+                <ID>Arrangement Service</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Voice Package Daily</ID>
+            <Partitions>
+              <Partition>
+                <ID>Voice Package Daily</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Master_Aggregate_Wallet</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Master Service Aggregate Wallet</ID>
+            <Partitions>
+              <Partition>
+                <ID>Master Service Aggregate Wallet</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Master Service Aggregate Wallet 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>Master Service Aggregate Wallet</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>
