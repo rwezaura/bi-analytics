@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Analytics_Olap_Cube", "Analytics_Olap_Cube\Analytics_Olap_Cube.dwproj", "{10B62535-241F-49B1-9226-8C1033D87D94}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.19.20.42:8080/tfs/test
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Analytics_Olap_Cube\\Analytics_Olap_Cube.dwproj
+		SccProjectName1 = Analytics_Olap_Cube
+		SccLocalPath1 = Analytics_Olap_Cube
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10B62535-241F-49B1-9226-8C1033D87D94}.Development|Default.ActiveCfg = Development
+		{10B62535-241F-49B1-9226-8C1033D87D94}.Development|Default.Build.0 = Development
+		{10B62535-241F-49B1-9226-8C1033D87D94}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
